@@ -42,20 +42,21 @@ body {
 }
 
 .height_parent {
-    height: -moz-calc(100% - 56px);
-    height: calc(100% - 56px);
+    padding:10px 0;
+    height: 100%;
+    box-sizing: border-box;
 }
 /*41是tab标签 44是底部footer*/
 .height_child1 {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    height: -moz-calc(100% - 41px - 46px);
-    height: calc(100% - 41px - 46px);
+    height: -moz-calc(100% - 41px);
+    height: calc(100% - 41px);
 }
 
 .main {
-    margin:15px;
+    margin:0 15px;
     height: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

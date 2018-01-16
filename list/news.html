@@ -9,6 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="layui/css/layui.css" media="all">
     <link rel="stylesheet" href="css/list.css">
+    <style>
+        body{overflow-y: scroll;}
+        .layui-body{overflow-y: scroll;}
+    </style>
 </head>
 
 <body>
@@ -250,18 +254,18 @@
         table.render({
             elem: '#newForm',
             url: address+'/list_date',
-            heihgt:250,
+            cellMinWidth: 80,
             page:true,
             cols: [
                 [
-                    {type:'checkbox',width:'60',title: 'ID'},
-                    { field: 'id',width:'100', title: 'ID', sort: true }, 
+                    {type:'checkbox',title: 'ID'},
+                    { field: 'id',title: 'ID', sort: true }, 
                     //width 支持：数字、百分比和不填写。你还可以通过 minWidth 参数局部定义当前单元格的最小宽度，layui 2.2.1 新增
-                    { field: 'image',width:'200',minWidth:"100", title: '图片预览' , templet: '#imgTpl', event: 'setSign', style:'cursor: pointer;', align: 'center'} ,
-                    { field: 'title',width:'700', title: '标题', edit: 'text'},
+                    { field: 'image',title: '图片预览' , templet: '#imgTpl', event: 'setSign', style:'cursor: pointer;', align: 'center'} ,
+                    { field: 'title',title: '标题', edit: 'text'},
                     // { field: 'link',width:'100', title: '查看',edit: 'text' , templet: '#linkTpl'}, 
-                    { field: 'game',width:'200', title: '联赛',edit: 'text' }, 
-                    { field: 'datetime',width:'200', title: '上传时间'}, 
+                    { field: 'game',title: '联赛',edit: 'text' }, 
+                    { field: 'datetime',title: '上传时间'}, 
                     { align:'center',title: '操作',  toolbar: '#barDemo' },
                 ]
             ]

@@ -15,26 +15,40 @@
     <div class="main">
         <div class="layui-tab layui-tab-brief height_parent" lay-filter="docDemoTabBrief">
             <ul class="layui-tab-title">
-                <li class="layui-this" data-anim="layui-anim-up">轮播页</li>
-                <li data-anim="layui-anim-rotate">焦点比赛</li>
-                <li data-anim="layui-anim-loop">资讯列表</li>
+                <li class="layui-this" data-anim="layui-anim-up" data-url="picture.html">轮播页</li>
+                <li data-anim="layui-anim-rotate" data-url="match.html">焦点比赛</li>
+                <li data-anim="layui-anim-loop" data-url="news.html">资讯列表</li>
             </ul>
             <div class="layui-tab-content height_child1">
                 <div class="layui-tab-item layui-show height100">
                     <iframe src="picture.html" frameborder="0" class="iframe"></iframe>
                 </div>
                 <div class="layui-tab-item height100">
-                    <iframe src="match.html" frameborder="0" class="iframe"></iframe>
+                    <iframe src="" frameborder="0" class="iframe"></iframe>
                 </div>
                 <div class="layui-tab-item height100">
-                    <iframe src="news.html" frameborder="0" class="iframe"></iframe>
+                    <iframe src="" frameborder="0" class="iframe"></iframe>
                 </div>
             </div>
         </div>
     </div>
     <script src="layui/layui.js" charset="utf-8"></script>
     <script>
-    layui.use(['element', 'form'], function() {});
+    layui.use(['jquery','element', 'form'], function() {
+        var $ = layui.jquery;
+        $('.layui-tab-title li').on('click',function(){
+            $(this).addClass('layui-this').siblings('li').removeClass('layui-this');
+            var _url=$(this).attr('data-url');
+            var index=$(this).index();
+            console.log(index)
+            var _cont=$('.layui-tab-content .layui-tab-item').eq(index).addClass('layui-show');
+            _cont.siblings('div').removeClass('layui-show');
+            if(!_cont.children('iframe').attr('src')){
+                _cont.children('iframe').attr('src',_url);
+            }
+            return false;
+        })
+    });
     </script>
 </body>
 

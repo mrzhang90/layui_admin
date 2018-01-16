@@ -63,6 +63,63 @@ layui.config({
 		addTab($(this));
 		// $(this).parent("li").siblings().removeClass("layui-nav-itemed");
 	})
+	// 左移按扭
+    $('.J_tabLeft').on('click', scrollTabLeft);
+
+    // 右移按扭
+    $('.J_tabRight').on('click', scrollTabRight);
+
+    
+	//关闭其他标签
+    $('.J_tabCloseOther').on('click', closeOtherTabs)
+	// 关闭全部
+    $('.J_tabCloseAll').on('click', function () {
+    	var _len=$('.top_tab').children("[lay-id]").length;
+    	for(var index=_len-1;index>0;index--){
+       		deleteStroge(index,$('.top_tab').children("[lay-id]").eq(index).attr('lay-id'))
+            $('.clildFrame>div').eq(index).remove();
+            $('.top_tab').children("[lay-id]").eq(index).remove();
+    	}
+            
+        $('.top_tab li:first-child').addClass('layui-this');
+        $('.clildFrame div:first-child').addClass('layui-show');
+        $('.top_tab').css("margin-left", "0");
+
+    });
+
+    //关闭其他选项卡
+    function closeOtherTabs(){
+        $('.top_tab').children("[lay-id]").not(":first").not(".layui-this").each(function () {
+            var index=$(this).index();
+            deleteStroge(index,$(this).attr('lay-id'))
+            $('.clildFrame>div').eq(index).remove();
+            $(this).remove();
+        });
+        $('.top_tab').css("margin-left", "0");
+    }
+    function deleteStroge(liIndex,lay_id,ele){
+    	var menu = JSON.parse(window.sessionStorage.getItem("menu"));
+		//获取被删除元素
+		delMenu = menu[liIndex - 1];
+		var curmenu = window.sessionStorage.getItem("curmenu") == "undefined" ? "undefined" : window.sessionStorage.getItem("curmenu") == "" ? '' : JSON.parse(window.sessionStorage.getItem("curmenu"));
+		if (JSON.stringify(curmenu) != JSON.stringify(menu[liIndex - 1])) { //如果删除的不是当前选中的tab
+			// window.sessionStorage.setItem("curmenu",JSON.stringify(curmenu));
+			curNav = JSON.stringify(curmenu);
+		} else {
+			var _len = $('.top_tab').children().length-1;
+			if (_len > liIndex) {
+				window.sessionStorage.setItem("curmenu", curmenu);
+				curNav = curmenu;
+			} else {
+				window.sessionStorage.setItem("curmenu", JSON.stringify(menu[liIndex - 1]));
+				curNav = JSON.stringify(menu[liIndex - 1]);
+			}
+		}
+		menu.splice((liIndex - 1), 1);
+		window.sessionStorage.setItem("menu", JSON.stringify(menu));
+		element.tabDelete("bodyTab", lay_id).init();
+    }
+
 	//公告层
 	function showNotice(){
 		layer.open({
@@ -129,6 +186,78 @@ layui.config({
 				element.tabChange("bodyTab",menu[menu.length-1].layId);
 			}
 		}
+	}
+
+	//查看左侧隐藏的选项卡
+	function scrollTabLeft() {
+		var marginLeftVal = Math.abs(parseInt($('.top_tab').css('margin-left')));
+		// 可视区域非tab宽度
+		var tabOuterWidth = calSumWidth($(".layadmin-pagetabs").children().not(".tab_header"));
+		//可视区域tab宽度
+		var visibleWidth = $(".tab_header").outerWidth(true) - tabOuterWidth;
+		//实际滚动宽度
+		var scrollVal = 0;
+		if (calSumWidth($('.top_tab').children()) < visibleWidth) {
+			return false;
+		} else {
+			var tabElement = $(".top_tab li:first");
+			var offsetVal = 0;
+			while ((offsetVal + $(tabElement).outerWidth(true)) <= marginLeftVal) { //找到离当前tab最近的元素
+				offsetVal += $(tabElement).outerWidth(true);
+				tabElement = $(tabElement).next();
+			}
+			offsetVal = 0;
+			if (calSumWidth($(tabElement).prevAll()) > visibleWidth) {
+				while ((offsetVal + $(tabElement).outerWidth(true)) < (visibleWidth) && tabElement.length > 0) {
+					offsetVal += $(tabElement).outerWidth(true);
+					tabElement = $(tabElement).prev();
+				}
+				scrollVal = calSumWidth($(tabElement).prevAll());
+			}
+		}
+		$('.top_tab').animate({
+			marginLeft: 0 - scrollVal + 'px'
+		}, "fast");
+	}
+	//查看右侧隐藏的选项卡
+	function scrollTabRight() {
+		var marginLeftVal = Math.abs(parseInt($('.top_tab').css('margin-left')));
+		// 可视区域非tab宽度
+		var tabOuterWidth = calSumWidth($(".layadmin-pagetabs").children().not(".tab_header"));
+		//可视区域tab宽度
+		var visibleWidth = $(".tab_header").outerWidth(true) - tabOuterWidth;
+		//实际滚动宽度
+		var scrollVal = 0;
+		if (calSumWidth($('.top_tab').children()) < visibleWidth) {
+			return false;
+		} else {
+			var tabElement = $(".top_tab li:first");
+			var offsetVal = 0;
+			while ((offsetVal + $(tabElement).outerWidth(true)) <= marginLeftVal) { //找到离当前tab最近的元素
+				offsetVal += $(tabElement).outerWidth(true);
+				tabElement = $(tabElement).next();
+			}
+			offsetVal = 0;
+			while ((offsetVal + $(tabElement).outerWidth(true)) < (visibleWidth) && tabElement.length > 0) {
+				offsetVal += $(tabElement).outerWidth(true);
+				tabElement = $(tabElement).next();
+			}
+			scrollVal = calSumWidth($(tabElement).prevAll());
+			if (scrollVal > 0) {
+				$('.top_tab').animate({
+					marginLeft: 0 - scrollVal + 'px'
+				}, "fast");
+			}
+		}
+	}
+
+	//计算元素集合的总宽度
+	function calSumWidth(elements) {
+		var width = 0;
+		$(elements).each(function() {
+			width += $(this).outerWidth(true);
+		});
+		return width;
 	}
 
 })
