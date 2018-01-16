@@ -1,0 +1,63 @@
+.clearFix {
+    zoom: 1;
+}
+
+.clearFix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.marginBug:before {
+    content: "";
+    display: table;
+}
+
+.iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.right {
+    float: right;
+}
+
+.border-radius {
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
+    -moz-transition: all 2s;
+    transition: all 2s;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.height100 {
+    height: 100%;
+}
+
+.height_parent {
+    height: -moz-calc(100% - 56px);
+    height: calc(100% - 56px);
+}
+/*41是tab标签 44是底部footer*/
+.height_child1 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: -moz-calc(100% - 41px - 46px);
+    height: calc(100% - 41px - 46px);
+}
+
+.main {
+    margin:15px;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}

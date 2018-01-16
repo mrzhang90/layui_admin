@@ -1,0 +1,304 @@
+@font-face {
+    font-family: 'jlx';
+    src: url('../fonts/jlx.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+html,body{
+	height:100%;
+	box-sizing:border-box;
+}
+body{
+	margin:0;
+	border:solid 15px #fff;
+	font-family: 'jlx';
+	color:#fff;background:#323232;
+}
+p{margin:0;}
+img{vertical-align:top;border:none;}
+/*Content box*/
+.content-box {
+	-moz-box-sizing: content-box;  /*Firefox3.5+*/
+	-webkit-box-sizing: content-box; /*Safari3.2+*/
+	-o-box-sizing: content-box; /*Opera9.6*/
+	-ms-box-sizing: content-box; /*IE8*/
+	box-sizing: content-box; /*W3C标准(IE9+，Safari5.1+,Chrome10.0+,Opera10.6+都符合box-sizing的w3c标准语法)*/
+}
+
+/*Border box*/
+.border-box {
+	-moz-box-sizing: border-box;  /*Firefox3.5+*/
+	-webkit-box-sizing: border-box; /*Safari3.2+*/
+	-o-box-sizing: border-box; /*Opera9.6*/
+	-ms-box-sizing: border-box; /*IE8*/
+	box-sizing: border-box; /*W3C标准(IE9+，Safari5.1+,Chrome10.0+,Opera10.6+都符合box-sizing的w3c标准语法)*/
+}
+.components1{
+	width:100%;
+}
+.clearFix{
+	zoom:1;
+}
+.clearFix:after{
+	content:"";
+	display:block;clear:both;
+}
+.header{
+	/*padding-top:10px;*/
+	height:16%;
+	text-align:center;
+	font-size:0;
+}
+.header .height_head{
+	height: 66.24203%;
+	font-size:0;
+	white-space:nowrap;
+}
+.header .divImg{
+	position: relative;
+	display: inline-block;
+	height: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.header img{
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.header .activityName{
+	display:inline-block;
+	padding-left:1%;
+	height:100%;
+	/*font-size:104px;*/
+	vertical-align:middle;
+}
+.header .activityName span{
+	font-size:0.89em;
+}
+.content{
+	position:relative;
+	margin:0 auto;
+	/*width:1411px;*/
+	height:84%;
+}
+.content .team{
+	position:relative;z-index:999;
+	/*padding-top: 17px;*/
+	width:30.60846%;height:100%;
+	overflow:hidden;
+}
+.content .left{
+	float:left;
+	/*padding-left:20px;*/
+}
+.content .right{
+	float:right;
+	/*padding-right:20px;*/
+}
+.teamName{
+	height: 28%;
+	/*padding-bottom:14px;*/
+	/*background-repeat:no-repeat;*/
+	/*background-size:127px 127px;*/
+	text-align:center;
+}
+.info_teamName{
+	position:relative;
+	height:84%;
+}
+.radiusImg{
+	position: absolute;
+	top: 50%;
+    /*margin-top: -63px;height:127px;*/
+    width:28.564%;
+	height:90%;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.radiusImg img{
+	position:absolute;top:50%;left:50%;width:100%;height:auto;
+	/*transform:translate(-50%,-50%);*/
+}
+.left .radiusImg{
+	right: 0;
+}
+.right .radiusImg{
+	left:0;
+}
+.teamName span{
+	display:block;width:70.5224%;height:38%;
+    /*line-height:70px;*/
+	/*font-size:54px;*/
+}
+.teamName b{
+	display:block;width:70.5224%;height:56%;
+    /*line-height: 78px;*/
+    /*font-size: 74px;*/
+    font-weight:300;white-space:nowrap;
+}
+.teamScore{
+	/*margin-top:16px;line-height:209px;width:398px;font-size:210px;*/
+    height:31%;
+	color:#e94b51;text-align:center;
+	/*letter-spacing:10px;*/
+}
+.teamScore div{
+    width: 89.51557%;
+    height: 100%;
+    border:solid 6px #fff;border-radius:18px;background:#000002;
+}
+.teamScore span{
+	display:inline-block;
+    font-size: 1.552em;
+	width:28.9168%;
+	vertical-align:middle;
+}
+.foulTotal{
+	/*padding-top:24px;*/
+    width:45.6%;
+	height:40%;
+}
+.foulTotal p{
+	/*padding-left:11px;line-height:62px;*/
+	/*font-size:40px;*/
+    height:23.9%;text-indent:0.2em;
+	white-space:nowrap;
+}
+.foulNumber{
+	/*width:172px;height:126px;line-height:138px;font-size:140px;*/
+    width: 89%;height: 51%;
+	border:solid 6px #fff;border-radius:17px;background:#000002;
+	text-align:center;
+	color:#1cb4d5;
+	text-indent:0.1em;letter-spacing:0.1em;
+}
+.foulNumber span{
+	font-size:1.3em;
+}
+.content .left .teamName {
+	/*background-position:right center;*/
+}
+.content .right .teamName {
+	/*background-position:left center;*/
+}
+.content .right .teamName span,.content .right .teamName b{
+	float:right;
+}
+.content .right .foulTotal{
+	float:right;
+}
+.content .center{
+	position:relative;z-index:2;
+	margin:0 auto;
+	/*padding-top:13px;*/
+	width:29.43915%;height:100%;
+}
+.time{
+	position: relative;
+	/*margin:17px auto 0;*/
+	margin:0 auto;
+	width:91.8%;height:18.8%;
+	color:#fff;
+	border:solid 6px #fff;border-radius:17px;background:#000002;
+	text-align:center;
+}
+.time.yellow{
+	color:#d8a303;
+}
+.time span{
+	display:inline-block;
+	width: 20.172%;height: 100%;
+	/*font-size:128px;*/
+	font-size: 1.3em;
+	vertical-align:middle;
+}
+.time span.timeHil{
+	width:8.645%;
+	background:url("../images/code2.png") center 75px no-repeat;
+	background-size:100% auto;
+}
+.time span.delimiter{
+	width:8.645%;
+	background:url("../images/code1.png") center center no-repeat;
+	background-size:100% auto;
+}
+
+.theFirst{
+	margin:0 auto;width:45.368%;height:7.38%;
+	background:url(../images/theFirst.png) no-repeat;
+	background-size:contain;
+	background-position:center center;
+	opacity: 0;
+}
+.theFirst.home{
+	opacity: 1;
+	transform: rotate(180deg);
+}
+.theFirst.guest{
+	opacity: 1;
+}
+.sectionNumber{
+	margin:0 auto;width:75%;height:15.77%;
+	border:solid 6px #fff;border-radius:17px;background:#000002;
+	/*font-size: 56px;line-height: 97px;*/
+	text-align: center;
+}
+.sectionNumber span{
+	display:block;
+	font-size:0.8em;
+}
+.second24{
+	margin:0 auto;width:59%;height: 28%;
+	border:solid 6px #fff;border-radius:17px;background:#000002;
+	/*font-size:200px;line-height:190px;*/
+	color:#e94b51;
+	text-align: center;
+	/*text-indent:14px;letter-spacing:10px;*/
+}
+.second24 span{
+	display:inline-block;
+	width:45%;text-align:center;
+	font-size:1.3em;
+	vertical-align:middle;
+}
+.YDHlogo{
+	position:absolute;top:0px;left:0;
+	width:100%;height:100%;font-size:0;
+}
+.YDHlogo .left,.YDHlogo .right{
+	width: 13.492%;height: 68%;
+	text-align:center;
+}
+.YDHlogo .logo_pause{
+	width:100%;height:32%;
+}
+.YDHlogo .bg_logo{
+	width:100%;height:51%;
+	background:url("../images/logo1.png") center bottom no-repeat;
+	background-size:contain;
+}
+/*.YDHlogo .left{*/
+	/*margin-left:204px;padding-left:0;*/
+/*}*/
+/*.YDHlogo .right{*/
+	/*margin-right:204px;padding-right:0;*/
+/*}*/
+.YDHlogo i{
+	display:inline-block;
+	/*margin:0 12px;height:50px;*/
+	width:19.8412%;
+	border:solid 2px #fff;border-radius:50%;
+}
+.YDHlogo i.active{
+	background:#e94b51;
+}
+.YDHlogo span{
+	display:inline-block;width:9.4488%;height:1px;
+}
+.codePos{
+	position:absolute;bottom:0;right:0;
+}

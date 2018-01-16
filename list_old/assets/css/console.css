@@ -1,0 +1,308 @@
+*, :after, :before{
+    box-sizing:content-box;
+}
+button,input{ outline:none !important;;}
+p{margin:0;}
+ul,li{list-style:none;}
+body button.btn{
+    top:0;
+    margin:0;
+    padding:0;
+    border:none;
+}
+input[type=text],input[type=number]{
+    margin:0;
+    padding:0;
+}
+.font-green{color:#88B781;}
+.font-red{color:#F1424F;}
+.font-blue{color:#1697E9;}
+.clearFix {
+    zoom: 1;
+}
+.clearFix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.left-form {
+    float: left;padding:4px 5px 0;
+    width: 573px;
+    /*height:522px;*/
+    background:#fff;border-radius:8px;
+}
+.right-form {
+    float: right;
+    width:363px;height:523px;
+    /*padding-left:20px;*/
+}
+
+.page-header{
+    margin-bottom:0;padding-bottom:3px;
+    border-color:#d4d4d4;
+}
+.head_a{text-decoration:underline;}
+.page-header h1{line-height:28px;}
+#form {
+    /*padding: 10px;*/
+    /*border: 1px solid #D5D5D5;background: #fff;*/
+}
+.firstTeam,.secondTeam{width:226px;}
+.first_leftTem{padding-right:18px;}
+.second_rightTeam{padding-left:15px;}
+h3.teamName{
+    margin:0;padding-top:7px;
+    line-height:31px;
+    color:#4283b7;
+    font-size:19px;
+}
+.firstTeam h3{
+    text-align:right;
+}
+.secondTeam  h3{
+    text-align:left;
+}
+/*#firstTeamScore, #secondTeamScore {*/
+.first_leftTem input,.second_rightTeam input{
+    padding:0;
+    height:58px;line-height:58px;font-size: 58px;
+    color:#88b781;
+    border-color: #fff;text-align: center;
+}
+.first_leftTem input{float: right;width: 123px;}
+.second_rightTeam input{float: left;width: 163px;}
+.first_leftTem p,.second_rightTeam p{
+    float: right;margin: 0;
+    line-height:18px;
+    text-align: center;font-size:16px;
+    color:#88B781;
+}
+.first_leftTem p{float: right;width: 140px;}
+.second_rightTeam p{float: left;width:145px;}
+.exchange{
+    padding-top:38px;
+    width:110px;
+    text-align:center;
+}
+.first_exchange{
+    height:20px;
+}
+.exchange p{
+    margin-bottom:0;line-height:32px;
+    font-size:16px;color:#000;
+}
+.exchange .ballRight{
+    display:inline-block;
+    padding:4px 3px;
+    border-radius:9px;
+    border:solid 1px #BBBBBB;background-color:#fff;
+}
+.exchange .ballRight.active{
+    border-color:#D8A303;
+}
+.exchange .ballRight i{
+    box-sizing:content-box;
+    display:block;
+    width:30px;height:10px;
+    background:url("../images/bg1.png") no-repeat;
+}
+.exchange .first_ball i{
+    background-position:0 0;
+}
+.exchange .first_ball.active i{
+    background-position:0 -11px;
+}
+.exchange .second_ball{
+    padding-top:2px;padding-bottom:2px;
+}
+.exchange .second_ball i{
+    width:14px;height:14px;
+    background-position:0 -22px;
+}
+.exchange .second_ball.active i{
+    background-position:-15px -22px;
+}
+.exchange .three_ball i{
+    background-position:-31px 0;
+}
+.exchange .three_ball.active i{
+    background-position:-31px -11px;
+}
+.second_exchange{
+    position:relative;z-index:999;
+    padding-top:6px;
+}
+.second_exchange input{
+    width:56px;height:20px;
+    text-align:center;font-size:12px;
+    border-radius: 9px !important;
+    background:url("../images/down.png") 47px center no-repeat;
+}
+.second_exchange ul{
+    display:none;
+    margin:0;width:56px;
+    position: absolute;left:28px;
+    line-height:22px;
+    font-size:12px;
+    background:#fff;
+}
+.second_exchange ul li{
+    border-bottom:dashed 1px #dcdcdc;cursor:pointer;
+}
+.second_exchange ul li:hover{
+    background:#428BCA;color:#fff;
+}
+.score_form{
+    font-size:12px;
+}
+.score_form .first{
+    padding-left:50px;
+}
+.score_form .second{
+    padding-left:60px;
+}
+.score_form .forth{
+    padding-left:60px;
+}
+.score_form div{
+    box-sizing:content-box;
+    width:58px;
+    text-align:center;
+}
+.score_form input{
+    margin:0;padding:0;color:inherit;
+    width:70px;height:38px;line-height:38px;
+    text-align:center;
+    border-color:#fff;
+    font-size:41px;
+}
+.score_form p{
+    line-height:18px;
+}
+.foul_score{
+    color:#F1424F;
+}
+.pause_score{
+    color:#1697E9;
+}
+.foul_score.three p,.pause_score.forth p{
+    /*width:30px;*/
+}
+.score_div1{}
+.score_div1 .left{
+    padding-right: 11px;
+    padding-bottom:16px;
+    border-right:dashed 1px #e7e7e7;
+}
+.score_div1 div{
+    padding-top:7px;
+}
+.score_div1 button{
+    width:67px;height:67px;
+    border-radius:50%;
+    border:none;font-size:34px;
+    background:#88B781;color:#fff;
+}
+.score_div1 .left button{
+    margin-left:21px;
+}
+.score_div1 .right button{
+    margin-right:21px;
+}
+.p_score{
+    padding-top:7px;
+    line-height:32px;
+    font-size:16px;
+    height:32px;
+}
+.p_score:first-child{
+    height:18px;
+    margin-top:0;
+    line-height:inherit;
+}
+.score_div1 .suspend button{
+    width:79px;height:45px;
+    border-radius:10px;font-size:26px;
+    background:#F1424F;
+}
+.score_div1 .left .suspend button{
+     margin-left:4px;
+ }
+.score_div1 .right .suspend button{
+    margin-right:4px;
+}
+/*.integral div {*/
+    /*padding-bottom: 8px;*/
+/*}*/
+
+/*.integral button {*/
+    /*width: 80px;*/
+/*}*/
+.page-content{background:#e5e5e5;}
+.cont_console{padding-top:21px;}
+
+/*right START*/
+/*button*/
+.right-form button{
+    width:112px;height:47px;
+    border-radius:10px;
+}
+/*计时器*/
+.timePv{
+    padding-left:11px;
+    width:363px;height:94px;
+    border-radius:10px;
+    background:#fff;
+}
+.timePv span{
+    display:inline-block;line-height:36px;
+    font-size:14px;
+    color:#747474;
+    vertical-align:top;
+}
+.timePv #timePView,.timePv #time24PView{
+    display:inline-block;line-height:94px;
+    font-size:78px;
+    color:#000;
+}
+.timePv #timePView{
+    padding-left:26px;
+}
+.timePv #time24PView{
+    padding-left:46px;
+}
+.button_right{
+    text-align:right;font-size:0;
+}
+.button_right button.btn{
+    margin-top:14px;
+    margin-left:13px;
+}
+.button_right button.btn:first-child{
+    margin-left:0;
+}
+.set_right{
+
+}
+.set_right p{
+    line-height:15px;
+    font-size:12px;
+    color:#747474;
+}
+.set_right input{
+    width:108px;height:43px;
+    border:solid 2px #747474;
+    border-radius:10px !important;
+    background:none;
+    text-align:right;
+}
+.set_right button{
+    font-size:24px;
+}
+/*right END*/
