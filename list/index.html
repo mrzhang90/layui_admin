@@ -40,7 +40,6 @@
             $(this).addClass('layui-this').siblings('li').removeClass('layui-this');
             var _url=$(this).attr('data-url');
             var index=$(this).index();
-            console.log(index)
             var _cont=$('.layui-tab-content .layui-tab-item').eq(index).addClass('layui-show');
             _cont.siblings('div').removeClass('layui-show');
             if(!_cont.children('iframe').attr('src')){

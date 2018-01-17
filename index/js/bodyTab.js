@@ -1,8 +1,8 @@
 /*
-	@Author: 请叫我马哥
-	@Time: 2017-04
-	@Tittle: tab
-	@Description: 点击对应按钮添加新窗口
+ *
+ *   H+ - 后台主题UI框架
+ *   version 4.6
+ *
 */
 var tabFilter, menu = [],
 	liIndex, curNav, delMenu;
@@ -53,10 +53,6 @@ layui.define(["element", "jquery"], function(exports) {
 		})
 		return tabIndex;
 	}
-	$('.navTopType').on('click', function() {
-		var index = $(this).index();
-		$('.navTopType2').eq(index).show().siblings('.navTopType2').hide();
-	})
 
 	//右侧内容tab操作
 	var tabIdIndex = 0;
@@ -88,7 +84,7 @@ layui.define(["element", "jquery"], function(exports) {
 				title += '<i class="layui-icon layui-unselect layui-tab-close" data-id="' + tabIdIndex + '">&#x1006;</i>';
 				element.tabAdd(tabFilter, {
 					title: title,
-					content: "<iframe src='" + _this.attr("data-url") + "' data-id='" + tabIdIndex + "'></frame>",
+					content: "<iframe src='" + _this.attr("data-url") + "' data-id='" + tabIdIndex + "' frameborder='no' border='0'></frame>",
 					id: new Date().getTime()
 				})
 
@@ -182,21 +178,24 @@ layui.define(["element", "jquery"], function(exports) {
 	}
 	//滚动到指定选项卡
 	function scrollToTab(element) {
+		var ele_topTab=$('.top_tab');
+		var width_topTab_child=calSumWidth(ele_topTab.children());
 		var marginLeftVal = calSumWidth($(element).prevAll()),
 			marginRightVal = calSumWidth($(element).nextAll());
 		// 可视区域非tab宽度
 		var tabOuterWidth = calSumWidth($(".layadmin-pagetabs").children().not(".tab_header"));
 		//可视区域tab宽度
 		var visibleWidth = $(".tab_header").outerWidth(true) - tabOuterWidth;
+		// var visibleWidth = ele_topTab.width();
 		//实际滚动宽度
         var scrollVal = 0;
-        if (calSumWidth($('.top_tab').children()) < visibleWidth) {
+        if (width_topTab_child < visibleWidth) {
             scrollVal = 0;
-        } else if (marginRightVal <= (visibleWidth - $(element).outerWidth(true) - $(element).next().outerWidth(true))) {
-            if ((visibleWidth - $(element).next().outerWidth(true)) > marginRightVal) {
+        } else if (marginRightVal <= (visibleWidth - $(element).outerWidth(true) - ($(element).next().outerWidth(true) || 0))) {
+            if ((visibleWidth - ($(element).next().outerWidth(true) || 0)) > marginRightVal) {
                 scrollVal = marginLeftVal;
                 var tabElement = element;
-                while ((scrollVal - $(tabElement).outerWidth()) > (calSumWidth($('.top_tab').children()) - visibleWidth)) {
+                while ((scrollVal - $(tabElement).outerWidth()) > (width_topTab_child - visibleWidth)) {
                     scrollVal -= $(tabElement).prev().outerWidth();
                     tabElement = $(tabElement).prev();
                 }
@@ -204,7 +203,7 @@ layui.define(["element", "jquery"], function(exports) {
         } else if (marginLeftVal > (visibleWidth - $(element).outerWidth(true) - $(element).prev().outerWidth(true))) {
             scrollVal = marginLeftVal - $(element).prev().outerWidth(true);
         }
-		$('.top_tab').animate({
+		ele_topTab.animate({
 			marginLeft: 0 - scrollVal + 'px'
 		}, "fast");
 	}

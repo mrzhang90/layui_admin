@@ -13,7 +13,6 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="layui/css/layui.css" media="all" />
-    <link rel="stylesheet" href="css/font_eolqem241z66flxr.css" media="all" />
     <link rel="stylesheet" href="css/main.css" media="all" />
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_535925_qzqi5nhzk7cwstt9.css">
 </head>
@@ -42,36 +41,45 @@
                     </li>
                 </ul>
                 <ul class="layui-nav top_menu right_header">
-                    <li class="layui-nav-item navTopType">
+                    <li class="layui-nav-item navTopType" pc>
                         <a href="javascript:;">
                             联赛
                         </a>
                     </li>
-                    <li class="layui-nav-item navTopType">
+                    <li class="layui-nav-item navTopType" pc>
                         <a href="javascript:;">
                                     用户管理
                                 </a>
                     </li>
-                    <li class="layui-nav-item navTopType">
+                    <li class="layui-nav-item navTopType" pc>
                         <a href="javascript:;">
                                     消息中心
                                 </a>
                     </li>
-                    <li class="layui-nav-item navTopType">
+                    <li class="layui-nav-item navTopType" pc>
                         <a href="javascript:;">
                                     系统
                                 </a>
                     </li>
-                    <li class="layui-nav-item navTopType">
+                    <li class="layui-nav-item navTopType" pc>
                         <a href="javascript:;">
                                     战队管理
                                 </a>
                     </li>
-                    <li class="layui-nav-item" mobile>
-                        <a href="javascript:;" data-url="page/user/changePwd.html"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>设置</cite></a>
+                    <li class="layui-nav-item navTopType" mobile>
+                        <a href="javascript:;" data-url="page/user/userInfo.html">
+                            个人资料
+                        </a>
                     </li>
-                    <li class="layui-nav-item" mobile>
-                        <a href="logoutAction.json"><i class="iconfont icon-loginout"></i> 退出</a>
+                    <li class="layui-nav-item navTopType" mobile>
+                        <a href="javascript:;" data-url="page/user/changePwd.html">
+                            修改密码
+                        </a>
+                    </li>
+                    <li class="layui-nav-item navTopType" mobile>
+                        <a href="logoutAction.json">
+                            退出
+                        </a>
                     </li>
                     <li class="layui-nav-item" pc>
                         <a href="javascript:;" style="padding:0 20px;">
@@ -188,29 +196,6 @@
                     </li>
             </div>
         </div>
-        <!-- 右侧内容 -->
-        <!-- <div class="layadmin-pagetabs" id="LAY_app_tabs">
-            <div class="layui-icon layadmin-tabs-control layui-icon-prev" layadmin-event="leftPage"></div>
-            <div class="layui-icon layadmin-tabs-control layui-icon-next" layadmin-event="rightPage"></div>
-            <div class="layui-icon layadmin-tabs-control layui-icon-down">
-                <ul class="layui-nav layadmin-tabs-select" lay-filter="layadmin-pagetabs-nav">
-                    <li class="layui-nav-item" lay-unselect=""> <a href="javascript:;"><span class="layui-nav-more"></span></a>
-                        <dl class="layui-nav-child layui-anim-fadein">
-                            <dd layadmin-event="closeOtherTabs"><a href="javascript:;">关闭其它标签页</a></dd>
-                            <dd layadmin-event="closeAllTabs"><a href="javascript:;">关闭全部标签页</a></dd>
-                        </dl>
-                    </li> <span class="layui-nav-bar"></span></ul>
-            </div>
-            <div class="layui-tab" lay-unauto="" lay-allowclose="true" lay-filter="layadmin-layout-tabs">
-                <ul class="layui-tab-title" id="LAY_app_tabsheader">
-                    <li lay-id="index" class=""><i class="layui-icon layui-icon-home"></i><i class="layui-icon layui-unselect layui-tab-close">ဆ</i></li>
-                    <li lay-id="component/grid/list" class=""><span>等比例列表排列</span><i class="layui-icon layui-unselect layui-tab-close">ဆ</i></li>
-                    <li lay-id="component/grid/mobile-pc" class=""><span>移动桌面组合</span><i class="layui-icon layui-unselect layui-tab-close">ဆ</i></li>
-                    <li lay-id="component/grid/all" class="layui-this"><span>全端复杂组合</span><i class="layui-icon layui-unselect layui-tab-close">ဆ</i></li>
-                </ul>
-            </div>
-        </div> -->
-
         <div class="layadmin-pagetabs layui-body layui-form">
             <div class="iconfont layadmin-tabs-control layui-icon-prev icon-double-left J_tabLeft"></div>
             <div class="iconfont layadmin-tabs-control layui-icon-next icon-double-right J_tabRight"></div>
@@ -253,6 +238,7 @@
     <!-- 移动导航 -->
     <div class="site-tree-mobile layui-hide"><i class="layui-icon">&#xe602;</i></div>
     <div class="site-mobile-shade"></div>
+    <script src="https://cdn.bootcss.com/json2/20160511/json2.min.js"></script>
     <script type="text/javascript" src="layui/layui.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/bodyTab.js"></script>

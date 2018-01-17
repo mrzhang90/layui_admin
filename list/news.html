@@ -10,8 +10,13 @@
     <link rel="stylesheet" href="layui/css/layui.css" media="all">
     <link rel="stylesheet" href="css/list.css">
     <style>
-        body{overflow-y: scroll;}
-        .layui-body{overflow-y: scroll;}
+    body {
+        overflow-y: scroll;
+    }
+
+    .layui-body {
+        overflow-y: scroll;
+    }
     </style>
 </head>
 
@@ -41,31 +46,35 @@
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">选择联赛</label>
-                <div class="layui-input-inline">
-                    <select name="quiz1">
-                        <option value="">请选择省</option>
-                        <option value="浙江" selected="">浙江省</option>
-                        <option value="你的工号">江西省</option>
-                        <option value="你最喜欢的老师">福建省</option>
-                    </select>
+                <div class="layui-input-inline j_category1">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" placeholder="请选择省" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit" style="">
+                            <dd lay-value="" class="layui-select-tips">请选择省</dd>
+                        </dl>
+                    </div>
                 </div>
-                <div class="layui-input-inline">
-                    <select name="quiz2">
-                        <option value="">请选择市</option>
-                        <option value="杭州">杭州</option>
-                        <option value="宁波" disabled="">宁波</option>
-                        <option value="温州">温州</option>
-                        <option value="温州">台州</option>
-                        <option value="温州">绍兴</option>
-                    </select>
+                <div class="layui-input-inline j_category2">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" placeholder="请选择市" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit" style="">
+                            <dd lay-value="" class="layui-select-tips">请选择市</dd>
+                        </dl>
+                    </div>
                 </div>
-                <div class="layui-input-inline">
-                    <select name="quiz3">
-                        <option value="">请选择县/区</option>
-                        <option value="西湖区">西湖区</option>
-                        <option value="余杭区">余杭区</option>
-                        <option value="拱墅区">临安市</option>
-                    </select>
+                <div class="layui-input-inline j_category3">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" placeholder="请选择县/区" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit" style="">
+                            <dd lay-value="" class="layui-select-tips">请选择县/区</dd>
+                        </dl>
+                    </div>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -88,8 +97,8 @@
             </div>
             <div class="layui-form-item">
                 <div class="layui-input-block">
-                  <button class="layui-btn" lay-submit="" lay-filter="btnSubmit">立即提交</button>
-                  <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    <button class="layui-btn" lay-submit="" lay-filter="btnSubmit">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                 </div>
             </div>
         </form>
@@ -104,31 +113,35 @@
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">选择联赛</label>
-                <div class="layui-input-inline">
-                    <select name="quiz1">
-                        <option value="">请选择省</option>
-                        <option value="浙江" selected="">浙江省</option>
-                        <option value="你的工号">江西省</option>
-                        <option value="你最喜欢的老师">福建省</option>
-                    </select>
+                <div class="layui-input-inline j_category1">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" placeholder="请选择省" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit" style="">
+                            <dd lay-value="" class="layui-select-tips">请选择省</dd>
+                        </dl>
+                    </div>
                 </div>
-                <div class="layui-input-inline">
-                    <select name="quiz2">
-                        <option value="">请选择市</option>
-                        <option value="杭州">杭州</option>
-                        <option value="宁波" disabled="">宁波</option>
-                        <option value="温州">温州</option>
-                        <option value="温州">台州</option>
-                        <option value="温州">绍兴</option>
-                    </select>
+                <div class="layui-input-inline j_category2">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" placeholder="请选择市" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit" style="">
+                            <dd lay-value="" class="layui-select-tips">请选择市</dd>
+                        </dl>
+                    </div>
                 </div>
-                <div class="layui-input-inline">
-                    <select name="quiz3">
-                        <option value="">请选择县/区</option>
-                        <option value="西湖区">西湖区</option>
-                        <option value="余杭区">余杭区</option>
-                        <option value="拱墅区">临安市</option>
-                    </select>
+                <div class="layui-input-inline j_category3">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" placeholder="请选择县/区" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit" style="">
+                            <dd lay-value="" class="layui-select-tips">请选择县/区</dd>
+                        </dl>
+                    </div>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -151,8 +164,8 @@
             </div>
             <div class="layui-form-item">
                 <div class="layui-input-block">
-                  <button class="layui-btn" lay-submit="" lay-filter="btnSubmit">立即提交</button>
-                  <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    <button class="layui-btn" lay-submit="" lay-filter="btnSubmit">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                 </div>
             </div>
         </form>
@@ -172,111 +185,120 @@
     </script>
     <!-- 模板文件 end-->
     <script src="layui/layui.js" charset="utf-8"></script>
+    <script src="js/select.jquery.js" charset="utf-8"></script>
     <script>
-    var dev='http://10.0.1.76:3000',prod='/';
-    var address=dev;
-    layui.use(['laydate', 'form', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'layedit', 'laydate'], function() {
+    var dev = 'http://10.0.1.76:3000',
+        prod = '/';
+    var address = dev;
+    layui.use(['laydate', 'form', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'layedit'], function() {
         var laydate = layui.laydate //日期
-            ,form = layui.form
-            ,laypage = layui.laypage //分页
-            ,layer = layui.layer //弹层
-            ,table = layui.table //表格
-            ,carousel = layui.carousel //轮播
-            ,upload = layui.upload //上传
-            ,$ = layui.jquery
-            ,element = layui.element
-            ,layedit = layui.layedit
-            ,laydate = layui.laydate; //元素操作
-        ~(function(){
-          //图片上传-编辑表单
-          var uploadInst = upload.render({
-            elem: '#imageEditForm'
-            ,url: address+'/upload/'
-            ,before: function(obj){
-              //预读本地文件示例，不支持ie8
-              obj.preview(function(index, file, result){
-                $('#msgEditForm').attr('src', result); //图片链接（base64）
-              });
-            }
-            ,done: function(res){
-              //如果上传失败
-              if(res.code > 0){
-                return layer.msg('上传失败');
-              }
-              //上传成功
-            }
-            ,error: function(){
-              //演示失败状态，并实现重传
-              var demoText = $('#textEditForm');
-              demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
-              demoText.find('.demo-reload').on('click', function(){
-                uploadInst.upload();
-              });
-            }
-          });
-          //日期
-          laydate.render({
-            elem: '#datetime'
-          });
-          
-          //创建一个编辑器
-          var editIndex = layedit.build('LAY_demo_editor');
-         
-          //自定义验证规则
-          form.verify({
-            title: function(value){
-              if(value.length < 5){
-                return '标题至少得5个字符啊';
-              }
-            }
-            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
-            ,content: function(value){
-              layedit.sync(editIndex);
-            }
-          });
-          
-          //监听指定开关
-          form.on('switch(switchTest)', function(data){
-            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
-              offset: '6px'
+            ,
+            form = layui.form,
+            laypage = layui.laypage //分页
+            ,
+            layer = layui.layer //弹层
+            ,
+            table = layui.table //表格
+            ,
+            carousel = layui.carousel //轮播
+            ,
+            upload = layui.upload //上传
+            ,
+            $ = layui.jquery,
+            element = layui.element,
+            layedit = layui.layedit,
+            laydate = layui.laydate; //元素操作
+        select_Category($).select_category();
+        ~(function() {
+            //图片上传-编辑表单
+            var uploadInst = upload.render({
+                elem: '#imageEditForm',
+                url: address + '/upload/',
+                before: function(obj) {
+                    //预读本地文件示例，不支持ie8
+                    obj.preview(function(index, file, result) {
+                        $('#msgEditForm').attr('src', result); //图片链接（base64）
+                    });
+                },
+                done: function(res) {
+                    //如果上传失败
+                    if (res.code > 0) {
+                        return layer.msg('上传失败');
+                    }
+                    //上传成功
+                },
+                error: function() {
+                    //演示失败状态，并实现重传
+                    var demoText = $('#textEditForm');
+                    demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                    demoText.find('.demo-reload').on('click', function() {
+                        uploadInst.upload();
+                    });
+                }
             });
-            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
-          });
-          
-          //监听提交
-          form.on('submit(btnSubmit)', function(data){
-            layer.alert(JSON.stringify(data.field), {
-              title: '最终的提交信息'
-            })
-            return false;
-          });
+            //日期
+            laydate.render({
+                elem: '#datetime'
+            });
+
+            //创建一个编辑器
+            var editIndex = layedit.build('LAY_demo_editor');
+
+            //自定义验证规则
+            form.verify({
+                title: function(value) {
+                    if (value.length < 5) {
+                        return '标题至少得5个字符啊';
+                    }
+                },
+                pass: [/(.+){6,12}$/, '密码必须6到12位'],
+                content: function(value) {
+                    layedit.sync(editIndex);
+                }
+            });
+
+            //监听指定开关
+            form.on('switch(switchTest)', function(data) {
+                layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
+                    offset: '6px'
+                });
+                layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+            });
+
+            //监听提交
+            form.on('submit(btnSubmit)', function(data) {
+                layer.alert(JSON.stringify(data.field), {
+                    title: '最终的提交信息'
+                })
+                return false;
+            });
         })()
         table.render({
             elem: '#newForm',
-            url: address+'/list_date',
+            url: address + '/list_date',
             cellMinWidth: 80,
-            page:true,
+            page: true,
             cols: [
                 [
-                    {type:'checkbox',title: 'ID'},
-                    { field: 'id',title: 'ID', sort: true }, 
+                    { type: 'checkbox', title: 'ID' },
+                    { field: 'id', title: 'ID', sort: true },
                     //width 支持：数字、百分比和不填写。你还可以通过 minWidth 参数局部定义当前单元格的最小宽度，layui 2.2.1 新增
-                    { field: 'image',title: '图片预览' , templet: '#imgTpl', event: 'setSign', style:'cursor: pointer;', align: 'center'} ,
-                    { field: 'title',title: '标题', edit: 'text'},
+                    { field: 'image', title: '图片预览', templet: '#imgTpl', event: 'setSign', style: 'cursor: pointer;', align: 'center' },
+                    { field: 'title', title: '标题', edit: 'text' },
                     // { field: 'link',width:'100', title: '查看',edit: 'text' , templet: '#linkTpl'}, 
-                    { field: 'game',title: '联赛',edit: 'text' }, 
-                    { field: 'datetime',title: '上传时间'}, 
-                    { align:'center',title: '操作',  toolbar: '#barDemo' },
+                    { field: 'game', title: '联赛', edit: 'text' },
+                    { field: 'datetime', title: '上传时间' },
+                    { align: 'center', title: '操作', toolbar: '#barDemo' },
                 ]
             ]
         });
         //执行实例
         var uploadInst = upload.render({
             elem: '#btn_imgUpload', //绑定元素                
-            url: address+'/upload/', //上传接口                
+            url: address + '/upload/', //上传接口                
             done: function(res) {
                 //上传完毕回调
-                $('#img_imgUpload').attr('src',res.image);
+                $('#img_imgUpload').attr('src', res.image);
             },
             error: function() {
                 //请求异常回调
@@ -298,66 +320,66 @@
         table.on('tool(newForm)', function(obj) {
             var data = obj.data;
             if (obj.event === 'setSign') {
-                doClickEvent(data,obj);
-            } else if (obj.event === 'detail') {//已废弃-直接跳转吧
+                doClickEvent(data, obj);
+            } else if (obj.event === 'detail') { //已废弃-直接跳转吧
                 // layer.msg('ID：' + data.id + ' 的查看操作');
-                
+
             } else if (obj.event === 'del') {
                 layer.confirm('真的删除行么', function(index) {
                     obj.del();
                     layer.close(index);
-                    deleteEnent(obj.data.id);//删除方法
+                    deleteEnent(obj.data.id); //删除方法
                 });
             } else if (obj.event === 'edit') {
                 // layer.alert('编辑行：<br>' + JSON.stringify(data))
                 doEditFormEvent(obj);
             }
         });
-        $('#addForm').on('click',function(){
+        $('#addForm').on('click', function() {
             doAddFormEvent();
         })
         //点击新增按钮-layout编辑表单
-        function doAddFormEvent(){
+        function doAddFormEvent() {
             layer.open({
-              type: 1
-              ,title:'【新增】'
-              ,area: ['800px', '500px']
-              ,content: $('#formAdd')
-              // ,btn: ['提交', '取消']
-              // ,yes: function(index, layero){
-              //   alert('提交了')
-              //   console.log($('#form'))
-              // }
-              // ,btn2: function(index, layero){
-              //   alert('关闭了')
-              //   console.log($('#form'))
-              // }
+                type: 1,
+                title: '【新增】',
+                area: ['800px', '500px'],
+                content: $('#formAdd')
+                // ,btn: ['提交', '取消']
+                // ,yes: function(index, layero){
+                //   alert('提交了')
+                //   console.log($('#form'))
+                // }
+                // ,btn2: function(index, layero){
+                //   alert('关闭了')
+                //   console.log($('#form'))
+                // }
             });
         }
         //点击编辑按钮-layout编辑表单
-        function doEditFormEvent(obj){
-            var data=obj.data;
+        function doEditFormEvent(obj) {
+            var data = obj.data;
             $('#title').val(data.title);
             $('#datetime').val(data.datetime);
-            $('#msgEditForm').attr('src',data.image);
+            $('#msgEditForm').attr('src', data.image);
             layer.open({
-              type: 1
-              ,title:'【编辑】 '+obj.data.title
-              ,area: ['800px', '500px']
-              ,content: $('#formEdit')
-              // ,btn: ['提交', '取消']
-              // ,yes: function(index, layero){
-              //   alert('提交了')
-              //   console.log($('#form'))
-              // }
-              // ,btn2: function(index, layero){
-              //   alert('关闭了')
-              //   console.log($('#form'))
-              // }
+                type: 1,
+                title: '【编辑】 ' + obj.data.title,
+                area: ['800px', '500px'],
+                content: $('#formEdit')
+                // ,btn: ['提交', '取消']
+                // ,yes: function(index, layero){
+                //   alert('提交了')
+                //   console.log($('#form'))
+                // }
+                // ,btn2: function(index, layero){
+                //   alert('关闭了')
+                //   console.log($('#form'))
+                // }
             });
         }
         //单元格 图片点击事件
-        function doClickEvent(data,obj) {
+        function doClickEvent(data, obj) {
             $('#img_imgUpload').attr('src', data.image);
             layer.open({
                 type: 1,
@@ -366,7 +388,7 @@
                 yes: function(index, layero) {
                     console.log(obj)
                     console.log(obj.update)
-                    obj.update({//这里一般是发送修改的Ajax请求
+                    obj.update({ //这里一般是发送修改的Ajax请求
 
                         //同步更新表格和缓存对应的值
                         sign: value
@@ -395,22 +417,22 @@
         //单元格 编辑事件
         function doEditTdEvent(obj) {
             var value = obj.value, //得到修改后的值
-                
+
                 data = obj.data, //得到所在行所有键值
-                
+
                 field = obj.field; //得到字段
             layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
         }
         //执行删除命令
-        function deleteEnent(id){
+        function deleteEnent(id) {
             console.log(id)
             //执行实例
             upload.render({
                 elem: '#btn_imgUpload',
-                url: address+'/upload/',
+                url: address + '/upload/',
                 done: function(res) {
                     //上传完毕回调
-                    $('#img_imgUpload').attr('src',res.image);
+                    $('#img_imgUpload').attr('src', res.image);
                 },
                 error: function() {
                     //请求异常回调

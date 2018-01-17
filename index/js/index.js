@@ -58,6 +58,12 @@ layui.config({
 		$('body').removeClass('site-mobile');
 	});
 
+
+	$('.navTopType').on('click', function() {
+		$('.layui-side-scroll').scrollTop(0)
+		var index = $(this).index();
+		$('.navTopType2').eq(index).show().siblings('.navTopType2').hide();
+	})
 	// 添加新窗口
 	$(".layui-nav .layui-nav-item a").on("click",function(){
 		addTab($(this));
@@ -172,7 +178,7 @@ layui.config({
 			openTitle += '<i class="layui-icon layui-unselect layui-tab-close" data-id="'+menu[i].layId+'">&#x1006;</i>';
 			element.tabAdd("bodyTab",{
 				title : openTitle,
-		        content :"<iframe src='"+menu[i].href+"' data-id='"+menu[i].layId+"'></frame>",
+		        content :"<iframe src='"+menu[i].href+"' data-id='"+menu[i].layId+"'  frameborder='no' border='0'></frame>",
 		        id : menu[i].layId
 			})
 			//定位到刷新前的窗口
