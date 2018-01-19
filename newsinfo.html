@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="css/list.css">
+    <style>
+    body {
+        /*overflow-y: scroll;*/
+    }
+
+    .layui-body {
+        overflow-y: scroll;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="formEdit" style="padding:20px;">
+        <form class="layui-form layui-form-pane" action="" lay-filter="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">标题</label>
+                <div class="layui-input-block">
+                    <input type="text" id="title" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">排序</label>
+                <div class="layui-input-block">
+                    <input type="number" id="sort" name="sort" lay-verify="required|number" autocomplete="off" placeholder="请输入排序" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">是否显示</label>
+                <div class="layui-input-block">
+                  <input type="radio" class="state_edit" name="state" value="1" title="是" checked="">
+                  <input type="radio" class="state_edit" name="state" value="0" title="否">
+                </div>                
+            </div>
+            <div class="layui-form-item j_select">
+                <label class="layui-form-label">选择</label>
+                <div class="layui-input-block">
+                  <input type="radio" name="select" value="" title="站外链接" checked="">
+                  <input type="radio" name="select" value="" title="站内编辑" disabled="disabled">
+                </div>                
+            </div>
+            <div class="layui-form-item j_selectGroup">
+                <label class="layui-form-label">站外链接</label>
+                <div class="layui-input-block">
+                    <input type="text" id="link" name="link" lay-verify="url" autocomplete="off" placeholder="请输入链接" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item j_selectGroup" style="display:none;">
+                <label class="layui-form-label">站内编辑</label>
+                <div class="layui-input-block">
+                  <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item j_select1">
+                <label class="layui-form-label">选择关联</label>
+                <div class="layui-input-block">
+                  <input type="radio" name="select1" value="" title="无" checked="">
+                  <input type="radio" name="select1" value="" title="关联联赛">
+                  <input type="radio" name="select1" value="" title="关联比赛">
+                </div>                
+            </div>
+            <div class="layui-form-item j_selectGroup1" style="display:none;">
+                <label class="layui-form-label">关联比赛</label>
+                <div class="layui-input-inline">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" placeholder="请选择省" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit" style="">
+                            <dd lay-value="" class="layui-select-tips">请选择省</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item j_selectGroup1" style="display:none;">
+                <label class="layui-form-label">关联联赛</label>
+                <div class="layui-input-inline j_category1">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" placeholder="请选择省" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit" style="">
+                            <dd lay-value="" class="layui-select-tips">请选择省</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="layui-input-inline j_category2">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" placeholder="请选择市" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit" style="">
+                            <dd lay-value="" class="layui-select-tips">请选择市</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="layui-input-inline j_category3">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" placeholder="请选择县/区" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit" style="">
+                            <dd lay-value="" class="layui-select-tips">请选择县/区</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="layui-input-inline j_category4">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" placeholder="请选择县/区" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit" style="">
+                            <dd lay-value="" class="layui-select-tips">请选择县/区</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">上传图片</label>
+                <div class="layui-input-inline">
+                    <button type="button" class="layui-btn" id="imageEditForm">上传图片</button>
+                    <div class="layui-upload-list">
+                        <img class="layui-upload-img" id="msgEditForm">
+                        <p id="textEditForm"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">起始时间</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="datetimeStart" id="datetimeStart" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">结束时间</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="datetimeEnd" id="datetimeEnd" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit="" lay-filter="btnSubmit">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script type="text/html" id="imgTpl">
+        <img src="{{d.image}}" alt="" style="max-width:100%;max-height:100%;">
+    </script>
+    <!-- 模板文件 end-->
+    <script src="layui/layui.js" charset="utf-8"></script>
+    <script src="js/select.jquery.js" charset="utf-8"></script>
+    <script>
+    var dev = 'http://10.0.1.76:3000',
+        prod = '/';
+    var address = dev;
+    layui.use(['laydate', 'form', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'layedit'], function() {
+        var laydate = layui.laydate //日期
+            ,
+            form = layui.form,
+            laypage = layui.laypage //分页
+            ,
+            layer = layui.layer //弹层
+            ,
+            table = layui.table //表格
+            ,
+            carousel = layui.carousel //轮播
+            ,
+            upload = layui.upload //上传
+            ,
+            $ = layui.jquery,
+            element = layui.element,
+            layedit = layui.layedit,
+            laydate = layui.laydate; //元素操作
+        ~(function() {
+            //单选点击事件
+            $('.j_select').on('click','.layui-form-radio',function(){
+                if($(this).is('.layui-disabled')){
+                    return;
+                }
+                var index=$(this).index('.j_select .layui-form-radio');
+                $('.j_selectGroup').eq(index).show().siblings('.j_selectGroup').hide();
+            })
+            $('.j_select1').on('click','.layui-form-radio',function(){
+                if($(this).is('.layui-disabled')){
+                    return;
+                }
+                var index=$(this).index('.j_select1 .layui-form-radio');
+                if(index==0)
+                    $('.j_selectGroup1').hide();
+                else
+                    $('.j_selectGroup1').eq(index-1).show().siblings('.j_selectGroup1').hide();
+            })
+            //三级联动
+            var _config1={
+                Category1ID: "j_category1",
+                Category2ID: "j_category2",
+                Category3ID: "j_category3",
+                Category4ID: "j_category4",
+                DataURL:address+'/select_date/'
+            }
+            new select_Category($,_config1).InitData();
+            //图片上传-编辑表单
+            var uploadInst = upload.render({
+                elem: '#imageEditForm',
+                url: address + '/upload/',
+                before: function(obj) {
+                    //预读本地文件示例，不支持ie8
+                    obj.preview(function(index, file, result) {
+                        $('#msgEditForm').attr('src', result); //图片链接（base64）
+                    });
+                },
+                done: function(res) {
+                    //如果上传失败
+                    if (res.code > 0) {
+                        return layer.msg('上传失败');
+                    }
+                    //上传成功
+                },
+                error: function() {
+                    //演示失败状态，并实现重传
+                    var demoText = $('#textEditForm');
+                    demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                    demoText.find('.demo-reload').on('click', function() {
+                        uploadInst.upload();
+                    });
+                }
+            });
+
+            //日期
+            laydate.render({
+                elem: '#datetimeStart'
+            });
+            laydate.render({
+                elem: '#datetimeEnd'
+            });
+
+            //创建一个编辑器
+            var editIndex = layedit.build('LAY_demo_editor');
+
+            //自定义验证规则
+            form.verify({
+                title: function(value) {
+                    if (value.length < 5) {
+                        return '标题至少得5个字符啊';
+                    }
+                },
+                pass: [/(.+){6,12}$/, '密码必须6到12位'],
+                content: function(value) {
+                    layedit.sync(editIndex);
+                }
+            });
+
+            //监听指定开关
+            form.on('switch(switchTest)', function(data) {
+                layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
+                    offset: '6px'
+                });
+                layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+            });
+
+            //监听提交
+            form.on('submit(btnSubmit)', function(data) {
+                layer.alert(JSON.stringify(data.field), {
+                    title: '最终的提交信息'
+                })
+                return false;
+            });
+        })()
+    });
+    </script>
+</body>
+
+</html>
