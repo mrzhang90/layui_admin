@@ -178,7 +178,7 @@ layui.config({
 			openTitle += '<i class="layui-icon layui-unselect layui-tab-close" data-id="'+menu[i].layId+'">&#x1006;</i>';
 			element.tabAdd("bodyTab",{
 				title : openTitle,
-		        content :"<iframe src='"+menu[i].href+"' data-id='"+menu[i].layId+"'  frameborder='no' border='0'></frame>",
+		        content :"<iframe name='"+menu[i]['name']+"' src='"+menu[i].href+"' data-id='"+menu[i].layId+"'  frameborder='no' border='0'></frame>",
 		        id : menu[i].layId
 			})
 			//定位到刷新前的窗口

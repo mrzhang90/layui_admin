@@ -53,10 +53,13 @@ body {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    /*height: -moz-calc(100% - 41px);*/
-    /*height: calc(100% - 41px);*/
+    height: -moz-calc(100% - 41px);
+    height: calc(100% - 41px);
 }
-
+.newHeight{
+    height: -moz-calc(100% - 38px);
+    height: calc(100% - 38px);
+}
 .main {
     margin:0 15px;
     height: 100%;
@@ -67,4 +70,8 @@ body {
 /*重写layui*/
 .layui-form-item .layui-input-inline{
     width:149px;
+}
+.layui-table-body{
+    overflow-x:hidden;
+    overflow-y:scroll;
 }

@@ -112,7 +112,7 @@
                         </a>
                         <dl class="layui-nav-child">
                             <dd>
-                                <a href="javascript:;" data-url="list.html">
+                                <a href="javascript:;" data-url="list.html" data-name="list">
                                     <cite>联赛列表</cite>
                                 </a>
                             </dd>
@@ -241,14 +241,18 @@
     <script src="https://cdn.bootcss.com/json2/20160511/json2.min.js"></script>
     <script type="text/javascript" src="layui/layui.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/bodyTab.js"></script>
+    <!-- <script type="text/javascript" src="js/bodyTab.js"></script> -->
     <script>
-        function open_iframe(obj){
-            layui.use('layer', function(){
-              var layer = layui.layer;
-                obj['type']=2;
-                layer.open(obj);
-            });
+        function closeAll(){
+            layer.closeAll();
+        }
+        function open_html(obj){
+            obj['type']=1;
+            layer.open(obj);
+        }
+        function open_iframe(obj,callback){
+            obj['type']=2;            
+            layer.open(obj);
         }
         function open_confirm(callback){
             layer.confirm('确定要删除么',function(index){

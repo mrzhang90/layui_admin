@@ -84,7 +84,7 @@ layui.define(["element", "jquery"], function(exports) {
 				title += '<i class="layui-icon layui-unselect layui-tab-close" data-id="' + tabIdIndex + '">&#x1006;</i>';
 				element.tabAdd(tabFilter, {
 					title: title,
-					content: "<iframe src='" + _this.attr("data-url") + "' data-id='" + tabIdIndex + "' frameborder='no' border='0'></frame>",
+					content: "<iframe name='"+_this.attr('data-name')+"' src='" + _this.attr("data-url") + "' data-id='" + tabIdIndex + "' frameborder='no' border='0'></frame>",
 					id: new Date().getTime()
 				})
 
@@ -94,7 +94,8 @@ layui.define(["element", "jquery"], function(exports) {
 					"icon": "",
 					"title": _this.find("cite").text(),
 					"href": _this.attr("data-url"),
-					"layId": new Date().getTime()
+					"layId": new Date().getTime(),
+					"name":_this.attr('data-name')
 				}
 				menu.push(curmenu);
 				window.sessionStorage.setItem("menu", JSON.stringify(menu)); //打开的窗口
@@ -107,7 +108,8 @@ layui.define(["element", "jquery"], function(exports) {
 					"icon": "",
 					"title": _this.find("cite").text(),
 					"href": _this.attr("data-url"),
-					"layId": new Date().getTime()
+					"layId": new Date().getTime(),
+					"name":_this.attr('data-name')
 				}
 				window.sessionStorage.setItem("curmenu", JSON.stringify(curmenu)); //当前的窗口
 				element.tabChange(tabFilter, that.getLayId(_this.find("cite").text()));

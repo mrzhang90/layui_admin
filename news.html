@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="layui/css/layui.css" media="all">
     <link rel="stylesheet" href="css/list.css">
     <style>
-    body {
+    html,body {
+        height:100%;
         /*overflow-y: scroll;*/
     }
 
@@ -42,7 +43,7 @@
     <div style="overflow:hidden;">
         <button class="right layui-btn layui-btn-big border-radius" id="addForm">新建资讯</button>
     </div>
-    <div class="layui-form">
+    <div class="layui-form newHeight">
         <table class="layui-table" id="newForm" lay-filter="newForm" style="margin:0;"></table>
     </div>
     <!-- layer open层 start -->
@@ -56,6 +57,13 @@
     </div>
     <!-- layer open层 end-->
     <!-- 模板文件 start-->
+    <script type="text/html" id="zhidTpl">
+        {{#  if(d.zhid === 0){ }}
+            <span class="color_over">否</span>
+          {{#  } else { }}
+            <span class="color_start">是</span>
+          {{#  } }}
+    </script>
     <script type="text/html" id="stateTpl">
         {{#  if(d.state === 0){ }}
             <span class="color_over">否</span>
@@ -98,7 +106,7 @@
             element = layui.element,
             layedit = layui.layedit,
             laydate = layui.laydate; //元素操作
-        
+        console.log($(parent.window.document.body).find('.j_parent').height())
         //执行实例
         var uploadInst = upload.render({
             elem: '#btn_imgUpload', //绑定元素                
@@ -117,13 +125,15 @@
             url: address + '/list_date',
             // cellMinWidth: 100,
             page: true,
+            height: 'full-50',
+            limit:10,
             cols: [
                 [
-                    { field: 'sort',title: '排序' },
-                    { field: 'image', title: '图片', templet: '#imgTpl', align: 'center' },
                     { field: 'title', title: '标题'},
                     { field: 'game1', title: '联赛'},
                     { field: 'game2', title: '比赛'},
+                    { field: 'image', title: '图片', templet: '#imgTpl', align: 'center' },
+                    { field: 'zhid',title: '置顶', templet: '#zhidTpl' },
                     { field: 'state', title: '显示', templet: '#stateTpl'},
                     { field: 'datetimeStart', title: '生效时间' },
                     { align: 'center',width:"200",title: '操作', toolbar: '#barDemo' }

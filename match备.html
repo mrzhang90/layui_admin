@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://cdn.bootcss.com/fullcalendar/3.8.0/fullcalendar.min.css' rel='stylesheet' />
+    <link href='https://cdn.bootcss.com/fullcalendar/3.8.0/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+    <link href="https://cdn.bootcss.com/qtip2/3.0.3/basic/jquery.qtip.css" rel="stylesheet">
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="css/list.css">
+    <style>
+        body {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+        }
+
+        #wrap {
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+        #external-events {
+            float: left;
+            width: 150px;
+            padding: 0 10px;
+            border: 1px solid #ccc;
+            background: #eee;
+            text-align: left;
+        }
+
+        #external-events h4 {
+            font-size: 16px;
+            margin-top: 0;
+            padding-top: 1em;
+        }
+
+        #external-events .fc-event {
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        #external-events p {
+            margin: 1.5em 0;
+            font-size: 11px;
+            color: #666;
+        }
+
+        #external-events p input {
+            margin: 0;
+            vertical-align: middle;
+        }
+
+        #calendar {
+            width: 76%;
+        }
+
+        #aa .none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='wrap'>
+        <!-- <div id='external-events'>
+            <h4>Draggable Events</h4>
+            <div class='fc-event'>http://www.baidu.com</div>
+            <div class='fc-event'>My Event 2</div>
+            <div class='fc-event'>My Event 3</div>
+            <div class='fc-event'>My Event 4</div>
+            <dl id="aa">
+                <dt>hi click</dt>
+                <dd class='none fc-event'>aa</dd>
+                <dd class='none fc-event'>bb</dd>
+                <dd class='none fc-event'>cc</dd>
+                <dd class='none fc-event'>dd</dd>
+            </dl>
+            <div class='fc-event'>My Event 5</div>
+            <p>
+                <input type='checkbox' id='drop-remove' />
+                <label for='drop-remove'>remove after drop</label>
+            </p>
+        </div> -->
+        <div id='calendar'></div>
+        <div style='clear:both'></div>
+    </div>
+    <script src="layui/layui.js" charset="utf-8"></script>
+    <script src='https://cdn.bootcss.com/moment.js/2.20.1/moment.js'></script>
+    <script src='https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.js'></script>
+    <script src='https://cdn.bootcss.com/fullcalendar/3.8.0/fullcalendar.min.js'></script>
+    <script src="https://cdn.bootcss.com/qtip2/3.0.3/basic/jquery.qtip.min.js"></script>
+    <script>
+    var dev = 'http://10.0.1.76:3000',
+        prod = '/',
+        address = dev;
+    layui.use(['form', 'layer', 'table', 'upload', 'laypage', 'element'], function() {
+        var form = layui.form,
+            laypage = layui.laypage //分页
+            ,
+            layer = layui.layer //弹层
+            ,
+            table = layui.table //表格
+            ,
+            upload = layui.upload //上传
+            ,
+            element = layui.element;
+        $(document).ready(function() {
+
+
+            /* initialize the external events
+            -----------------------------------------------------------------*/
+
+            $('#external-events .fc-event').each(function() {
+
+                // store data so the calendar knows to render an event upon drop
+                $(this).data('event', {
+                    title: $.trim($(this).text()), // use the element's text as the event title
+                    stick: true // maintain when user navigates (see docs on the renderEvent method)
+                });
+
+                // make the event draggable using jQuery UI
+                $(this).draggable({
+                    zIndex: 999,
+                    revert: true, // will cause the event to go back to its
+                    revertDuration: 0 //  original position after the drag
+                });
+
+            });
+
+
+            /* initialize the calendar
+            -----------------------------------------------------------------*/
+            var obj = {}
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay,listWeek'
+                },
+                events: [{
+                        start: '2018-01-21',
+                        rendering: 'background',
+                        description: 'This is a cool event'
+                    },
+                    {
+                        title: 'hihihi',
+                        start: '2018-01-20',
+                        // url: 'http://google.com/'
+                    }
+                ],
+                eventRender: function(event, element) {
+                    element.qtip({
+                        content: event.description
+                    });
+                },
+                navLinks: true,
+                navLinkDayClick: function(date, jsEvent) {
+                    console.log('day', date.format()); // date is a moment
+                    console.log('coords', jsEvent.pageX, jsEvent.pageY);
+                },
+                editable: true,
+                droppable: true, // this allows things to be dropped onto the calendar
+                drop: function() {
+                    // is the "remove after drop" checkbox checked?
+                    if ($('#drop-remove').is(':checked')) {
+                        // if so, remove the element from the "Draggable Events" list
+                        $(this).remove();
+                    }
+                },
+                eventClick: function(calEvent, jsEvent, view) {
+                    // alert('Event: ' + calEvent.title);
+                    // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+                    // alert('View: ' + view.name);
+
+                    // change the border color just for fun
+                    // $(this).css('border-color', 'red');
+                    //删除
+                    $('#calendar').fullCalendar('removeEvents', function(ev) {
+                        return (ev._id == calEvent._id);
+                    })
+                    //修改名字
+                    // calEvent.title = "CLICKED!";
+                    // $('#calendar').fullCalendar('updateEvent', calEvent);
+                },
+                dayClick: function(date, calEvent, view, resourceObj) {
+                    // console.log(this)
+                    // alert('Clicked on: ' + date.format());
+
+                    // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+
+                    // alert('Current view: ' + view.name);
+
+                    // change the day's background color just for fun
+                    $(this).css('background-color', 'red');
+                    // alert('Date: ' + date.format());
+                    // alert('Resource ID: ' + resourceObj.id);
+
+                },
+                selectable: true,
+                selectHelper: true,
+                select: function(start, end, allDay) {
+                    $('#aa dt').siblings('dd').toggleClass('none');
+                    //   bootbox.prompt("New Event Title:", function(title) {
+                    //   if (title !== null) {
+                    //     calendar.fullCalendar('renderEvent',
+                    //       {
+                    //         title: title,
+                    //         start: start,
+                    //         end: end,
+                    //         allDay: allDay
+                    //       },
+                    //       true // make the event "stick"
+                    //     );
+                    //   }
+                    // });
+                    // calendar.fullCalendar('unselect');
+                    obj = {
+                        start: start,
+                        end: end,
+                        allDay: allDay
+                    }
+                },
+                eventMouseover: function(calEvent, jsEvent, view) {
+
+                },
+                eventMouseout: function(calEvent, jsEvent, view) {
+
+                }
+            });
+            $('#aa dt').on('click', function() {
+                // $(this).siblings('dd').toggleClass('none');
+            })
+            $('#aa dd').on('click', function() {
+                var title = $(this).text();
+                if (title !== null) {
+                    obj['title'] = title
+                    $('#calendar').fullCalendar('renderEvent',
+                        obj,
+                        true // make the event "stick"
+                    );
+                }
+                $('#calendar').fullCalendar('unselect');
+            })
+        });
+    })
+    </script>
+</body>
+
+</html>

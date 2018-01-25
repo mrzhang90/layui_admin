@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta content="target-densitydpi=device-dpi,width=750,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>运动汇下载</title>
+    <style>
+    body {
+        margin: 0;padding: 0;
+    }
+    html,body{
+        height:100%;
+        overflow:hidden;
+    }
+    .main {
+        width: 750px;height: 1206px;
+        background: url(bg.jpg) no-repeat;
+        background-size:100% auto;
+    }
+
+    #button {
+        position: absolute;top: 243px;left: 284px;
+        width: 182px;height: 76px;line-height: 76px;
+        text-align: center;text-decoration: none;
+        font-size: 24px;font-family: MicrosoftYaHei;
+        color: #fff;background: #313131;
+        border: none;border-radius: 5px;
+    }
+    </style>
+</head>
+
+<body>
+    <section class="main">
+        <a href="" id="button" target="_self">下载运动汇</a>
+    </section>
+    <script>
+    window.onload = function() {       
+
+        var androidUrl = 'http://ydh123.oss-cn-beijing.aliyuncs.com/apk/com.galaxyleague.ydh_3.0.10.apk';
+        var iosUrl = 'https://itunes.apple.com/cn/app/yun-dong-hui-lan-qiu-sai-shi/id1059276410?mt=8';
+
+        var useragent = navigator.userAgent.toLowerCase();
+        var isWeixin = /micromessenger/i.test(useragent);
+        var iOS = /iP(hone|od|ad)/i.test(useragent);
+        var Android = /Android/i.test(useragent);
+        var applink = '',
+            qqAppUrl = '',
+            params = {};
+        var platform = 'desktop';
+        var self = document.getElementById('button');
+        if (isWeixin) {
+            applink = qqAppUrl || 'http://android.myapp.com/myapp/detail.htm?apkName=com.galaxyleague.ydh';
+            params.stop = true;
+        } else if (iOS) {
+            platform = 'iOS';
+            applink = iosUrl;
+        } else if (Android) {
+            platform = 'android';
+            applink = androidUrl;
+        } else {
+            params.stop = true;
+        }
+        self.href = applink;
+        if (!params.stop) {
+            location.href = applink;
+        }
+    }
+    </script>
+</body>
+
+</html>

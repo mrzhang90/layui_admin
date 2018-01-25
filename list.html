@@ -9,11 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="layui/css/layui.css" media="all">
     <link rel="stylesheet" href="css/list.css">
+    <style>
+        html,body{height:100%;}
+    </style>
 </head>
 
 <body>
     <div class="main">
-        <div class="layui-tab layui-tab-brief height_parent" lay-filter="docDemoTabBrief">
+        <div class="layui-tab layui-tab-brief height_parent" lay-filter="docDemoTabBrief" style="margin:0;">
             <ul class="layui-tab-title">
                 <li class="layui-this" data-anim="layui-anim-up" data-url="picture.html">轮播页</li>
                 <li data-anim="layui-anim-rotate" data-url="match.html">焦点比赛</li>
@@ -21,13 +24,13 @@
             </ul>
             <div class="layui-tab-content height_child1">
                 <div class="layui-tab-item layui-show height100">
-                    <iframe src="picture.html" frameborder="0" class="iframe" style="min-height: 540px;"></iframe>
+                    <iframe name="picture" src="picture.html" frameborder="0" scrolling="no" class="iframe" style=""></iframe>
+                </div>
+                <div class="layui-tab-item height100 j_match">
+                    <iframe name="match" id="match" src="match.html" frameborder="0" scrolling="no" class="iframe" style=""></iframe>
                 </div>
                 <div class="layui-tab-item height100">
-                    <iframe src="" frameborder="0" class="iframe" style="min-height: 540px;"></iframe>
-                </div>
-                <div class="layui-tab-item height100">
-                    <iframe src="" frameborder="0" class="iframe" style="min-height: 540px;"></iframe>
+                    <iframe name="news" src="" frameborder="0" scrolling="no" class="iframe" style=""></iframe>
                 </div>
             </div>
         </div>
