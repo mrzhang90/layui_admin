@@ -4,40 +4,99 @@
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="/favicon.ico" />
-    <meta content="target-densitydpi=device-dpi,width=750,user-scalable=no" name="viewport">
+    <meta content="target-densitydpi=device-dpi,width=1242,user-scalable=no" name="viewport">
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta content="telephone=no" name="format-detection">
     <meta content="email=no" name="format-detection">
     <title>运动汇下载</title>
+    <link rel="stylesheet" href="fonts/fonts.css" />
     <style>
-    body {
+    body,p,h1,h2{
         margin: 0;padding: 0;
+		color: #36373c;
     }
     html,body{
-        height:100%;
-        overflow:hidden;
+   		background-color:#EAEBED;
     }
     .main {
-        width: 750px;height: 1206px;
-        background: url(bg.jpg) no-repeat;
-        background-size:100% auto;
+    	position:relative;
+    	margin:0 auto;padding-bottom:80px;
+        width: 1242px;
     }
-
-    #button {
-        position: absolute;top: 243px;left: 284px;
-        width: 182px;height: 76px;line-height: 76px;
+    .main:after{
+    	content:"";
+    	position:absolute;top:83px;left:130px;
+    	width:295px;height:184px;
+    	background:url(images/l1.jpg) no-repeat;
+    }
+    .main:before{
+    	content:"";
+    	position:absolute;top:83px;right:130px;
+    	width:309px;height:201px;
+    	background:url(images/r1.jpg) no-repeat;
+    }
+    .logo{
+    	padding-top:171px;
+    	text-align:center;
+    }
+    .h1{
+    	padding-top:62px;
+    	font-size: 56px;
+    	line-height: 58px;
+    	text-align:center;
+    }
+    .p1{
+		font-size: 52px;
+    	text-align:center;
+    	line-height:90px;
+    }
+    .p2{
+    	margin:0 auto;
+    	padding-top:26px;
+    	width: 624px;
+    	line-height: 50px;
+    	font-size: 36px;
+    	color: #584f60;
+    	white-space: nowrap;
+        text-align:center;
+    }
+    .download{
+    	height:162px;line-height:162px;
+		text-align:center;
+    }
+    .download a{
+    	display:inline-block;margin:0 auto;
+        width: 200px;height: 84px;line-height: 84px;
         text-align: center;text-decoration: none;
-        font-size: 24px;font-family: MicrosoftYaHei;
+        font-size: 26px;
         color: #fff;background: #313131;
-        border: none;border-radius: 5px;
+        border: none;border-radius: 8px;
+    }
+    .bg{
+    	text-align:center;
     }
     </style>
 </head>
 
 <body>
     <section class="main">
-        <a href="" id="button" target="_self">下载运动汇</a>
+    	<div class="logo">
+    		<img src="images/logo.jpg" alt="">
+    	</div>
+    	<h1 class="h1 RTWSYueRoudGoDemo">运动汇</h1>
+    	<p class="p1 RTWSYueGoTrial">篮球联赛一站式服务平台</p>
+    	<p class="p2 RTWSYueGoTrial">
+    		选择运动汇等于选择了：线上报名，<br/>
+            赛事直播，赛事互动，赛事数据，赛事动<br/>
+            态，球队管理，赛事宣传，场地配套服务
+    	</p>
+        <div class="download RTWSYueRoudGoDemo">
+    		<a href="" id="button" target="_self">下载运动汇</a>
+        </div>
+        <div class="bg">
+        	<img src="images/bg.jpg" alt="">
+        </div>
     </section>
     <script>
     window.onload = function() {       
