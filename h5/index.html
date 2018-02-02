@@ -21,7 +21,8 @@
     }
     .main {
     	position:relative;
-    	margin:0 auto;padding-bottom:80px;
+    	margin:0 auto;
+        /*padding-bottom:80px;*/
         width: 1242px;
     }
     .main:after{
@@ -37,9 +38,11 @@
     	background:url(images/r1.jpg) no-repeat;
     }
     .logo{
-    	padding-top:171px;
+    	padding-top:135px;
+        height:240px;
     	text-align:center;
     }
+    .logo img{height:100%;}
     .h1{
     	padding-top:62px;
     	font-size: 56px;
@@ -54,7 +57,6 @@
     .p2{
     	margin:0 auto;
     	padding-top:26px;
-    	width: 624px;
     	line-height: 50px;
     	font-size: 36px;
     	color: #584f60;
@@ -62,20 +64,20 @@
         text-align:center;
     }
     .download{
-    	height:162px;line-height:162px;
+        padding:80px 0;
 		text-align:center;
     }
     .download a{
     	display:inline-block;margin:0 auto;
-        width: 200px;height: 84px;line-height: 84px;
+        width: 293px;height:134px;line-height: 135px;
         text-align: center;text-decoration: none;
-        font-size: 26px;
-        color: #fff;background: #313131;
-        border: none;border-radius: 8px;
+        font-size: 44px;
+        color: #fff;background: #1EA38B;
+        border: none;border-radius: 10px;
     }
     .bg{
     	text-align:center;
-    }
+    }    
     </style>
 </head>
 
@@ -87,12 +89,11 @@
     	<h1 class="h1 RTWSYueRoudGoDemo">运动汇</h1>
     	<p class="p1 RTWSYueGoTrial">篮球联赛一站式服务平台</p>
     	<p class="p2 RTWSYueGoTrial">
-    		选择运动汇等于选择了：线上报名，<br/>
-            赛事直播，赛事互动，赛事数据，赛事动<br/>
+    		选择运动汇等于选择了：线上报名，赛事直播，赛事互动，<br/>赛事数据，赛事动
             态，球队管理，赛事宣传，场地配套服务
     	</p>
         <div class="download RTWSYueRoudGoDemo">
-    		<a href="" id="button" target="_self">下载运动汇</a>
+    		<a href="" id="button" target="_self">下载 运动汇</a>
         </div>
         <div class="bg">
         	<img src="images/bg.jpg" alt="">
@@ -108,7 +109,7 @@
         var isWeixin = /micromessenger/i.test(useragent);
         var iOS = /iP(hone|od|ad)/i.test(useragent);
         var Android = /Android/i.test(useragent);
-        var applink = '',
+        var applink = 'http://www.ydh123.com',
             qqAppUrl = '',
             params = {};
         var platform = 'desktop';
