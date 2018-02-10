@@ -1,0 +1,44 @@
+{
+	"status": 1,
+	"code": 1,
+	"msg": "ok",
+	"data": {
+		"pageSize": 10,
+		"total": 2,
+		"pageNo": 1,
+		"isNextPage": false,
+		"dataList": [{
+			"title": "12",
+			"banner": "http://file.ydh123.com/pro/photo/12daecede7ab44d19ff419dcfaa76fd3",
+			"url": "http://mp.weixin.qq.com/s/YJ2LMQuSOu6cxVnmxdAYfA",
+			"status": {
+				"value": 1,
+				"desc": "上架"
+			},
+			"releaseTime": "2018-02-07 00:00:00",
+			"endTime": "2018-02-08 15:45:45",
+			"top": {
+				"value": 0,
+				"desc": "不置顶"
+			},
+			"actGame": "无",
+			"id": "88998899"
+		}, {
+			"title": "11111111111",
+			"banner": "http://file.ydh123.com/pro/photo/320874448b8b4b1dae628a2eddedf8bc",
+			"url": "http://10.0.1.76:8080/",
+			"status": {
+				"value": 1,
+				"desc": "上架"
+			},
+			"releaseTime": "2018-02-05 18:35:43",
+			"endTime": null,
+			"top": {
+				"value": 0,
+				"desc": "不置顶"
+			},
+			"actGame": "无",
+			"id": "ABq299929992"
+		}]
+	}
+}

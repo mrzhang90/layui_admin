@@ -1,0 +1,93 @@
+{
+	"status": 1,
+	"code": 1,
+	"msg": "ok",
+	"data": [{
+		"date": "2018-02-06",
+		"games": [{
+			"homeTeamName": "雷霆万钧",
+			"guestTeamName": "大联盟测试B",
+			"dataType": {
+				"value": 1,
+				"desc": "自动"
+			},
+			"id": "ABq2DKD2DKD2"
+		}, {
+			"homeTeamName": "雷霆万钧",
+			"guestTeamName": "大联盟测试B",
+			"dataType": {
+				"value": 1,
+				"desc": "自动"
+			},
+			"id": "ABq2fkd2dk23"
+		}, {
+			"homeTeamName": "大联盟测试B",
+			"guestTeamName": "大联盟测试B",
+			"dataType": {
+				"value": 1,
+				"desc": "自动"
+			},
+			"id": "ABq2DKD2dk23"
+		}, {
+			"homeTeamName": "雷霆万钧",
+			"guestTeamName": "大联盟测试B",
+			"dataType": {
+				"value": 1,
+				"desc": "自动"
+			},
+			"id": "CE2D9992fkd2"
+		}]
+	}, {
+		"date": "2018-02-07",
+		"games": [{
+			"homeTeamName": "雷霆万钧",
+			"guestTeamName": "大联盟测试B",
+			"dataType": {
+				"value": 3,
+				"desc": "手动"
+			},
+			"id": "ABq2fkd2DKD2"
+		}, {
+			"homeTeamName": "雷霆万钧",
+			"guestTeamName": "大联盟测试B",
+			"dataType": {
+				"value": 3,
+				"desc": "手动"
+			},
+			"id": "ABq2fkd2zdkd"
+		}]
+	}, {
+		"date": "2018-02-08",
+		"games": [{
+			"homeTeamName": "国王",
+			"guestTeamName": "雷霆万钧",
+			"dataType": {
+				"value": 1,
+				"desc": "自动"
+			},
+			"id": "ABq28899fkd2"
+		}]
+	}, {
+		"date": "2018-02-19",
+		"games": [{
+			"homeTeamName": "北京分院",
+			"guestTeamName": "本部一队",
+			"dataType": {
+				"value": 1,
+				"desc": "自动"
+			},
+			"id": "384d8899"
+		}]
+	}, {
+		"date": "2018-02-28",
+		"games": [{
+			"homeTeamName": "猛龙",
+			"guestTeamName": "大联盟测试B",
+			"dataType": {
+				"value": 1,
+				"desc": "自动"
+			},
+			"id": "ABq2CE2D8899"
+		}]
+	}]
+}

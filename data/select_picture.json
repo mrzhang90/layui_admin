@@ -1,0 +1,132 @@
+{
+	"status": 1,
+	"code": 1,
+	"msg": "ok",
+	"data": {
+		"pageSize": 10,
+		"total": 20,
+		"pageNo": 1,
+		"isNextPage": true,
+		"dataList": [{
+			"name": "00000000",
+			"banner": "http://file.ydh123.com/sys/banner/07e1ee6f46fb42ac914a28b4ab832832",
+			"sort": "0",
+			"display": {
+				"value": 1,
+				"desc": "是"
+			},
+			"releaseTime": "2018-02-07 18:45:39",
+			"endTime": null,
+			"url": null,
+			"id": "zdkd9992"
+		}, {
+			"name": "测试111",
+			"banner": "http://file.ydh123.com/sys/banner/d1551d81164d4f5797ac85cb1ec451da",
+			"sort": "0",
+			"display": {
+				"value": 1,
+				"desc": "是"
+			},
+			"releaseTime": "2018-02-07 00:00:00",
+			"endTime": null,
+			"url": null,
+			"id": "fkd2fkd2"
+		}, {
+			"name": "798",
+			"banner": "http://file.ydh123.com/sys/banner/fbc738a9d645487cbdefaec3d761e209",
+			"sort": "0",
+			"display": {
+				"value": 1,
+				"desc": "是"
+			},
+			"releaseTime": "2018-02-07 00:00:00",
+			"endTime": "2018-02-07 05:00:00",
+			"url": null,
+			"id": "fkd2zdkd"
+		}, {
+			"name": "添加新闻试试3",
+			"banner": "http://file.ydh123.com/sys/banner/b8958cf50cc644c88352cfd79446b33e",
+			"sort": "0",
+			"display": {
+				"value": 1,
+				"desc": "是"
+			},
+			"releaseTime": "2018-02-01 00:00:00",
+			"endTime": "2018-02-08 12:12:50",
+			"url": null,
+			"id": "fkd2DKD2"
+		}, {
+			"name": "1",
+			"banner": "http://file.ydh123.com/sys/banner/8f571d33697c4c8d856d8a2dea6ea9e8",
+			"sort": "1",
+			"display": {
+				"value": 1,
+				"desc": "是"
+			},
+			"releaseTime": "2018-02-07 18:49:00",
+			"endTime": null,
+			"url": null,
+			"id": "zdkdABq2"
+		}, {
+			"name": "211111111111111",
+			"banner": "http://file.ydh123.com/sys/banner/e95ba97f0fdb4a87b3aeb0fd6653723a",
+			"sort": "1",
+			"display": {
+				"value": 1,
+				"desc": "是"
+			},
+			"releaseTime": "2018-02-07 18:35:15",
+			"endTime": null,
+			"url": null,
+			"id": "fkd28899"
+		}, {
+			"name": "1",
+			"banner": "http://file.ydh123.com/sys/banner/c76535f6c460478d96432312b8aeb420",
+			"sort": "1",
+			"display": {
+				"value": 1,
+				"desc": "是"
+			},
+			"releaseTime": "2018-02-07 17:54:17",
+			"endTime": null,
+			"url": null,
+			"id": "fkd23132"
+		}, {
+			"name": "cc",
+			"banner": "http://file.ydh123.com/sys/banner/f00b15824e7f4e648204130a4be1d88f",
+			"sort": "1",
+			"display": {
+				"value": 0,
+				"desc": "否"
+			},
+			"releaseTime": "2018-02-07 00:00:00",
+			"endTime": "2018-02-07 05:05:00",
+			"url": null,
+			"id": "dk238899"
+		}, {
+			"name": "ccccccc",
+			"banner": "http://file.ydh123.com/sys/banner/aec64d0661344481a02e1608f456b54b",
+			"sort": "1",
+			"display": {
+				"value": 0,
+				"desc": "否"
+			},
+			"releaseTime": "2018-02-07 00:00:00",
+			"endTime": "2018-02-07 00:00:00",
+			"url": null,
+			"id": "fkd2CE2D"
+		}, {
+			"name": "ddd",
+			"banner": "http://file.ydh123.com/sys/banner/6f5de974691642a88c524409da5ed3d8",
+			"sort": "1",
+			"display": {
+				"value": 0,
+				"desc": "否"
+			},
+			"releaseTime": "2018-02-07 00:00:00",
+			"endTime": "2018-02-07 00:00:00",
+			"url": null,
+			"id": "fkd2dk23"
+		}]
+	}
+}

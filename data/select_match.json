@@ -1,0 +1,92 @@
+{
+	"status": 1,
+	"code": 1,
+	"msg": "ok",
+	"data": {
+		"type": {
+			"value": 1,
+			"desc": "自动"
+		},
+		"list": [{
+			"competingTime": "2018-02-06 00:00:00",
+			"homeTeamName": "雷霆万钧",
+			"guestTeamName": "大联盟测试B",
+			"eventName": "小组赛",
+			"leagueMatchName": "互联星河测试联赛",
+			"gdId": "384d88998899",
+			"auto": 1,
+			"manual": 0,
+			"id": "ABq2DKD2DKD2"
+		}, {
+			"competingTime": "2018-02-06 00:00:00",
+			"homeTeamName": "雷霆万钧",
+			"guestTeamName": "大联盟测试B",
+			"eventName": " 半决赛",
+			"leagueMatchName": "运动汇测试赛事",
+			"gdId": "384d88998899",
+			"auto": 1,
+			"manual": 0,
+			"id": "ABq2fkd2dk23"
+		}, {
+			"competingTime": "2018-02-06 00:00:00",
+			"homeTeamName": "大联盟测试B",
+			"guestTeamName": "大联盟测试B",
+			"eventName": "小组赛",
+			"leagueMatchName": "互联星河测试联赛",
+			"gdId": "384d88998899",
+			"auto": 1,
+			"manual": 0,
+			"id": "ABq2DKD2dk23"
+		}, {
+			"competingTime": "2018-02-06 11:41:47",
+			"homeTeamName": "雷霆万钧",
+			"guestTeamName": "大联盟测试B",
+			"eventName": "小组赛",
+			"leagueMatchName": "运动汇测试赛事",
+			"gdId": "384d88998899",
+			"auto": 1,
+			"manual": 0,
+			"id": "CE2D9992fkd2"
+		}, {
+			"competingTime": "2018-02-07 00:00:00",
+			"homeTeamName": "雷霆万钧",
+			"guestTeamName": "大联盟测试B",
+			"eventName": " 上下半场循环赛",
+			"leagueMatchName": "运动汇测试赛事",
+			"gdId": "313299929992",
+			"auto": 0,
+			"manual": 1,
+			"id": "ABq2fkd2DKD2"
+		}, {
+			"competingTime": "2018-02-07 00:00:00",
+			"homeTeamName": "雷霆万钧",
+			"guestTeamName": "大联盟测试B",
+			"eventName": "小组赛",
+			"leagueMatchName": "运动汇测试赛事",
+			"gdId": "313299929992",
+			"auto": 0,
+			"manual": 1,
+			"id": "ABq2fkd2zdkd"
+		}, {
+			"competingTime": "2018-02-07 11:05:05",
+			"homeTeamName": "猛龙",
+			"guestTeamName": "大联盟测试B",
+			"eventName": "决赛",
+			"leagueMatchName": "运动汇直播",
+			"gdId": "313299929992",
+			"auto": 0,
+			"manual": 1,
+			"id": "ABq2DKD2ABq2"
+		}, {
+			"competingTime": "2018-02-08 00:00:00",
+			"homeTeamName": "国王",
+			"guestTeamName": "雷霆万钧",
+			"eventName": "小组赛",
+			"leagueMatchName": "大学生篮球测试联赛",
+			"gdId": "313299929992",
+			"auto": 0,
+			"manual": 1,
+			"id": "ABq28899fkd2"
+		}]
+	}
+}

@@ -3,38 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>资讯列表</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="layui/css/layui.css" media="all">
-    <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/css/list.css">
     <style>
-    html,body {
-        height:100%;
+    html,
+    body {
+        height: 100%;
         /*overflow-y: scroll;*/
     }
 
     .layui-body {
         overflow-y: scroll;
-    }
-    tr th:nth-child(1),tr td:nth-child(1){
-        /*width:60px;*/
-    }
-    tr th:nth-child(2),tr td:nth-child(2){
-    }
-    tr th:nth-child(3),tr td:nth-child(3){
-    }
-    tr th:nth-child(4),tr td:nth-child(4){
-    }
-    tr th:nth-child(5),tr td:nth-child(5){
-    }
-    tr th:nth-child(6),tr td:nth-child(6){
-    }
-    tr th:nth-child(7),tr td:nth-child(7){
-    }
-    tr th:nth-child(8),tr td:nth-child(8) *{
-        /*width:200px;*/
     }
     </style>
 </head>
@@ -44,7 +27,10 @@
         <button class="right layui-btn layui-btn-big border-radius" id="addForm">新建资讯</button>
     </div>
     <div class="layui-form newHeight">
-        <table class="layui-table" id="newForm" lay-filter="newForm" style="margin:0;"></table>
+        <table class="layui-table" id="newForm" lay-filter="newForm" style="margin:0;">
+            <tbody td="tbody"></tbody>
+        </table>
+        <div id="pages"></div>
     </div>
     <!-- layer open层 start -->
     <div id="imgUpload" style="display:none;text-align:center;padding:20px 0;">
@@ -58,89 +44,94 @@
     <!-- layer open层 end-->
     <!-- 模板文件 start-->
     <script type="text/html" id="zhidTpl">
-        {{#  if(d.zhid === 0){ }}
-            <span class="color_over">否</span>
-          {{#  } else { }}
-            <span class="color_start">是</span>
-          {{#  } }}
+        {{# if(d.top.value === 0){ }}
+        <span class="color_over">否</span> {{# } else { }}
+        <span class="color_start">是</span> {{# } }}
     </script>
     <script type="text/html" id="stateTpl">
-        {{#  if(d.state === 0){ }}
-            <span class="color_over">否</span>
-          {{#  } else { }}
-            <span class="color_start">是</span>
-          {{#  } }}
+        {{# if(d.status.value === 0){ }}
+        <span class="color_over">否</span> {{# } else { }}
+        <span class="color_start">是</span> {{# } }}
     </script>
     <script type="text/html" id="imgTpl">
-        <img src="{{d.image}}" alt="" style="max-width:100%;max-height:100%;">
+        <img src="{{d.banner}}" alt="" style="max-width:100%;max-height:100%;">
     </script>
     <script type="text/html" id="linkTpl">
-        <a href="{{d.link}}" target="_blank">查看</a>
+        <a href="{{d.url}}" class="layui-btn layui-btn-primary layui-btn-xs" target="_blank">查看H5</a>
     </script>
     <script type="text/html" id="barDemo">
-        <a href="{{d.link}}" class="layui-btn layui-btn-primary layui-btn-xs" target="_blank">查看H5</a>
         <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
     <!-- 模板文件 end-->
-    <script src="layui/layui.js" charset="utf-8"></script>
+    <script src="/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/util.js"></script>
     <script>
-    var dev = 'http://10.0.1.76:3000',
+    var dev = '',
         prod = '/';
     var address = dev;
     layui.use(['laydate', 'form', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'layedit'], function() {
-        var laydate = layui.laydate //日期
-            ,
-            form = layui.form,
-            laypage = layui.laypage //分页
-            ,
-            layer = layui.layer //弹层
-            ,
-            table = layui.table //表格
-            ,
-            carousel = layui.carousel //轮播
-            ,
-            upload = layui.upload //上传
-            ,
-            $ = layui.jquery,
-            element = layui.element,
-            layedit = layui.layedit,
-            laydate = layui.laydate; //元素操作
-        console.log($(parent.window.document.body).find('.j_parent').height())
-        //执行实例
-        var uploadInst = upload.render({
-            elem: '#btn_imgUpload', //绑定元素                
-            url: address + '/upload/', //上传接口                
-            done: function(res) {
-                //上传完毕回调
-                $('#img_imgUpload').attr('src', res.image);
-            },
-            error: function() {
-                //请求异常回调
-            }
-        });
-       
-        var tableIndes = table.render({
-            elem: '#newForm',
-            url: address + '/list_date',
-            // cellMinWidth: 100,
-            page: true,
-            height: 'full-50',
-            limit:10,
-            cols: [
-                [
-                    { field: 'title', title: '标题'},
-                    { field: 'game1', title: '联赛'},
-                    { field: 'game2', title: '比赛'},
-                    { field: 'image', title: '图片', templet: '#imgTpl', align: 'center' },
-                    { field: 'zhid',title: '置顶', templet: '#zhidTpl' },
-                    { field: 'state', title: '显示', templet: '#stateTpl'},
-                    { field: 'datetimeStart', title: '生效时间' },
-                    { align: 'center',width:"200",title: '操作', toolbar: '#barDemo' }
-                ]
-            ]
-        });
-        
+        var laypage = layui.laypage,
+            layer = layui.layer,
+            table = layui.table,
+            $ = layui.jquery;
+        var pageNo = 1,
+            pageSize = 10;
+        render(pageNo, pageSize);
+
+        function render(pNo, pSize) {
+            pageNo = pNo, pageSize = pSize;
+            $.ajax({
+                method: "get",
+                url: '/data/select_list_news.json',
+                data: { pageNo: pageNo, pageSize: pageSize },
+                dataType: "json",
+                success: function(result) {
+                    if (!zgs_util.selectCallback(result)) {
+                        return false;
+                    }
+                    var data = result.data;
+                    var dataList = data.dataList;
+                    table.render({
+                        elem: '#newForm',
+                        height: 'full-100',
+                        cols: [
+                            [
+                                { field: 'title', title: '标题' },
+                                { field: 'actGame', title: '联赛-比赛' },
+                                { field: 'banner', title: '图片', templet: '#imgTpl', align: 'center' },
+                                { field: 'top', title: '置顶', templet: '#zhidTpl' },
+                                { field: 'status', title: '上架', templet: '#stateTpl' },
+                                { field: 'releaseTime', title: '生效时间' },
+                                { field: 'endTime', title: '失效时间' },
+                                { field: 'url', title: 'H5链接', toolbar: '#linkTpl' },
+                                { align: 'center', width: "200", title: '操作', toolbar: '#barDemo' }
+                            ]
+                        ],
+                        data: dataList
+                    });
+                    laypage.render({
+                        elem: 'pages',
+                        count: data.total,
+                        limit: data.pageSize,
+                        layout: ['prev', 'page', 'next', 'skip', 'count'],
+                        prev: '<i class="layui-icon"></i>',
+                        next: '<i class="layui-icon"></i>',
+                        curr: data.pageNo, //设定初始在第 5 页
+                        groups: 6 //只显示 1 个连续页码
+                            ,
+                        jump: function(obj, first) {
+                            //首次不执行
+                            if (!first) {
+                                render(obj.curr, obj.limit)
+                            }
+                        }
+                    });
+                },
+                error: zgs_util.error
+            })
+        }
+
         //监听查看、编辑、删除、图片点击
         table.on('tool(newForm)', function(obj) {
             var data = obj.data;
@@ -150,38 +141,41 @@
                 // layer.msg('ID：' + data.id + ' 的查看操作');
 
             } else if (obj.event === 'del') {
-                window.parent.parent.open_confirm(function(index){
-                    $.get(address+'/delete_date',function(data){
-                        if(!data.data){
-                            window.parent.parent.open_layer(data.msg);
-                            tableIndes.reload();//删除之后，重载
-                        }else{
-                            obj.del();
+                window.top.open_confirm(function(index) {
+                    $.get(address + '/data/submit.json', { 'proNewsId': data.id }, function(result) {
+                        if (result.status == 1) {
+                            render(pageNo, pageSize) //删除之后，重载
                         }
-                    },'json')
+                        zgs_util.delCallback(result)
+                    }, 'json')
                 })
-                // layer.confirm('真的删除行么', function(index) {
-                //     obj.del();
-                //     layer.close(index);
-                //     deleteEnent(obj.data.id);
-                // });
             } else if (obj.event === 'edit') {
-                // layer.alert('编辑行：<br>' + JSON.stringify(data))
-                // doEditFormEvent(obj);
-
-                window.parent.parent.open_iframe({
-                    title: '【编辑】 ' ,
+                layui.data('test', {
+                    key: 'status',
+                    value: 'edit'
+                });
+                window.top.open_iframe({
+                    title: '【编辑】 ',
                     area: ['800px', '500px'],
-                    content: '/newsinfo.html'
+                    end: function() {
+                        render(pageNo, pageSize)
+                    },
+                    content: '/newsinfo.html?status=edit&proNewsId=' + data.id
                 });
             }
         });
         $('#addForm').on('click', function() {
-            // doAddFormEvent();
-            window.parent.parent.open_iframe({
-                title: '新增 ' ,
+            layui.data('test', {
+                key: 'status',
+                value: 'add'
+            });
+            window.top.open_iframe({
+                title: '新增 ',
                 area: ['800px', '500px'],
-                content: '/newsinfo.html'
+                end: function() {
+                    render(pageNo, pageSize)
+                },
+                content: '/newsinfo.html?status=add'
             });
         })
         //单元格 图片点击事件
@@ -202,30 +196,6 @@
 
                 }
             });
-            // layer.prompt({
-            //     formType: 2,
-            //     title: '修改 ID 为 [' + data.id + '] 的用户签名',
-            //     value: data.image
-            // }, function(value, index) {
-            //     console.log(value,index)
-            //     layer.close(index);
-
-
-            //     obj.update({           //这里一般是发送修改的Ajax请求
-
-            //     //同步更新表格和缓存对应的值
-            //         sign: value
-            //     });
-            // });
-        }
-        //单元格 编辑事件
-        function doEditTdEvent(obj) {
-            var value = obj.value, //得到修改后的值
-
-                data = obj.data, //得到所在行所有键值
-
-                field = obj.field; //得到字段
-            layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
         }
     });
     </script>

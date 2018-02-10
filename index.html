@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="layui/css/layui.css" media="all" />
     <link rel="stylesheet" href="css/main.css" media="all" />
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_535925_qzqi5nhzk7cwstt9.css">
+    <link rel="stylesheet" href="/css/list.css" media="all">
 </head>
 
 <body class="main_body">
@@ -25,73 +26,74 @@
                 <!-- 顶部右侧菜单 -->
                 <ul class="layui-nav layui-layout-left ">
                     <!-- <li class="layui-nav-item ">
-                        <a href="javascript:;" title="侧边伸缩">
-                          <i class="iconfont icon-shouhuicelalan" id="LAY_app_flexible"></i>
-                        </a>
-                    </li> -->
+                    <a href="javascript:;" title="侧边伸缩">
+                      <i class="iconfont icon-shouhuicelalan" id="LAY_app_flexible"></i>
+                    </a>
+                </li> -->
                     <li class="layui-nav-item ">
                         <a href="javascript:;" target="_blank" title="前台">
-                          <i class="iconfont icon-wangluo"></i>
-                        </a>
+                        <i class="iconfont icon-wangluo"></i>
+                    </a>
                     </li>
-                    <li class="layui-nav-item ">
-                        <a href="javascript:;" layadmin-event="refresh" title="刷新" class="">
-                          <i class="iconfont icon-shuaxin"></i>
-                        </a>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;" layadmin-event="refresh" title="刷新" class="j_refresh">
+                        <i class="iconfont icon-shuaxin"></i>
+                    </a>
                     </li>
                 </ul>
                 <ul class="layui-nav top_menu right_header">
-                    <li class="layui-nav-item navTopType" pc>
+                    <li class="layui-nav-item navTopType" pc="">
+                        <a href="javascript:;">
+                            做好的页面
+                        </a>
+                    </li>
+                    <li class="layui-nav-item navTopType" pc="">
+                        <a href="javascript:;">
+                            消息中心
+                        </a>
+                    </li>
+                    <li class="layui-nav-item navTopType" pc="">
                         <a href="javascript:;">
                             联赛
                         </a>
                     </li>
-                    <li class="layui-nav-item navTopType" pc>
+                    <li class="layui-nav-item navTopType" pc="">
                         <a href="javascript:;">
-                                    用户管理
-                                </a>
+                            用户管理
+                        </a>
                     </li>
-                    <li class="layui-nav-item navTopType" pc>
+                    <li class="layui-nav-item navTopType" pc="">
                         <a href="javascript:;">
-                                    消息中心
-                                </a>
+                            战队管理
+                        </a>
                     </li>
-                    <li class="layui-nav-item navTopType" pc>
-                        <a href="javascript:;">
-                                    系统
-                                </a>
-                    </li>
-                    <li class="layui-nav-item navTopType" pc>
-                        <a href="javascript:;">
-                                    战队管理
-                                </a>
-                    </li>
-                    <li class="layui-nav-item navTopType" mobile>
+                    <li class="layui-nav-item navTopType" mobile="">
                         <a href="javascript:;" data-url="page/user/userInfo.html">
-                            个人资料
-                        </a>
+                        个人资料
+                    </a>
                     </li>
-                    <li class="layui-nav-item navTopType" mobile>
+                    <li class="layui-nav-item navTopType" mobile="">
                         <a href="javascript:;" data-url="page/user/changePwd.html">
-                            修改密码
-                        </a>
+                        修改密码
+                    </a>
                     </li>
-                    <li class="layui-nav-item navTopType" mobile>
+                    <li class="layui-nav-item navTopType" mobile="">
                         <a href="logoutAction.json">
-                            退出
-                        </a>
+                        退出
+                    </a>
                     </li>
-                    <li class="layui-nav-item" pc>
+                    <li class="layui-nav-item" pc="">
                         <a href="javascript:;" style="padding:0 20px;">
                             <!-- <img src="images/icon.png" class="layui-circle" width="35" height="35"> -->
                             <cite>超级管理员</cite>
-                        </a>
+                            <span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
                             <dd><a href="javascript:;" data-url="page/user/userInfo.html"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>
                             <dd><a href="javascript:;" data-url="page/user/changePwd.html"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>修改密码</cite></a></dd>
                             <dd><a href="logoutAction.json"><i class="iconfont icon-loginout"></i><cite>退出</cite></a></dd>
                         </dl>
                     </li>
+                    <span class="layui-nav-bar"></span>
                 </ul>
             </div>
         </div>
@@ -100,59 +102,30 @@
             <div class="navBar layui-side-scroll">
                 <div class="user-photo left_header layui-logo">
                     <a href="#" class="img logo">
-                        <span>运动汇</span>
-                    </a>
+                    <span>运动汇</span>
+                </a>
                 </div>
                 <ul class="layui-nav layui-nav-tree">
                     <li class="layui-nav-item navTopType2 layui-nav-itemed">
                         <a href="javascript:;">
-                            <i class="iconfont icon-liansai"></i>
-                            <cite>联赛</cite>
-                            <span class="layui-nav-more"></span>
-                        </a>
+                                    <i class="iconfont icon-liansai"></i>
+                                    <cite>做好的页面</cite>
+                                    <span class="layui-nav-more"></span>
+                                </a>
                         <dl class="layui-nav-child">
                             <dd>
-                                <a href="javascript:;" data-url="list.html" data-name="list">
-                                    <cite>联赛列表</cite>
-                                </a>
-                            </dd>
-                            <dd>
-                                <a href="javascript:;" data-url="/gm/contestant/list.html">
-                                    <cite>报名列表</cite>
-                                </a>
-                            </dd>
-                            <dd>
-                                <a href="javascript:;" data-url="/ar/list.html">
-                                    <cite>场馆列表</cite>
+                                <a href="javascript:;" data-url="/list.html">
+                                    <cite>点击</cite>
                                 </a>
                             </dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item navTopType2 layui-nav-itemed">
                         <a href="javascript:;">
-                            <i class="iconfont icon-yonghuguanli01"></i>
-                            <cite>用户管理</cite>
-                            <span class="layui-nav-more"></span>
-                        </a>
-                        <dl class="layui-nav-child">
-                            <dd>
-                                <a href="javascript:;" data-url="/user/ydh/list.html">
-                                    <cite>用户列表</cite>
+                                    <i class="iconfont icon-yonghuguanli01"></i>
+                                    <cite>消息中心</cite>
+                                    <span class="layui-nav-more"></span>
                                 </a>
-                            </dd>
-                            <dd>
-                                <a href="javascript:;" data-url="/user/ydh-device/list.html">
-                                    <cite>设备列表</cite>
-                                </a>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li class="layui-nav-item navTopType2 layui-nav-itemed">
-                        <a href="javascript:;">
-                            <i class="iconfont icon-xiaoxizhongxin"></i>
-                            <cite>消息中心</cite>
-                            <span class="layui-nav-more"></span>
-                        </a>
                         <dl class="layui-nav-child">
                             <dd>
                                 <a href="javascript:;" data-url="/msg/template/list.html">
@@ -168,24 +141,58 @@
                     </li>
                     <li class="layui-nav-item navTopType2 layui-nav-itemed">
                         <a href="javascript:;">
-                            <i class="iconfont icon-xitong"></i>
-                            <cite>系统</cite>
-                            <span class="layui-nav-more"></span>
-                        </a>
+                                    <i class="iconfont icon-xiaoxizhongxin"></i>
+                                    <cite>联赛</cite>
+                                    <span class="layui-nav-more"></span>
+                                </a>
                         <dl class="layui-nav-child">
                             <dd>
-                                <a href="javascript:;" data-url="/sys/webapi/detail.html">
-                                    <cite>接口监控</cite>
+                                <a href="javascript:;" data-url="/gm/activity/list.html">
+                                    <cite>联赛列表</cite>
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;" data-url="/gm/contestant/list.html">
+                                    <cite>报名列表</cite>
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;" data-url="/ar/list.html">
+                                    <cite>场馆列表</cite>
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;" data-url="/sys/home/appHome.html">
+                                    <cite>APP首页设置</cite>
                                 </a>
                             </dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item navTopType2 layui-nav-itemed">
                         <a href="javascript:;">
-                            <i class="iconfont icon-orgnize"></i>
-                            <cite>战队管理</cite>
-                            <span class="layui-nav-more"></span>
-                        </a>
+                                    <i class="iconfont icon-xitong"></i>
+                                    <cite>用户管理</cite>
+                                    <span class="layui-nav-more"></span>
+                                </a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a href="javascript:;" data-url="/user/ydh/list.html">
+                                    <cite>用户列表</cite>
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;" data-url="/user/ydh-device/list.html">
+                                    <cite>设备列表</cite>
+                                </a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item navTopType2 layui-nav-itemed">
+                        <a href="javascript:;">
+                                    <i class="iconfont icon-orgnize"></i>
+                                    <cite>战队管理</cite>
+                                    <span class="layui-nav-more"></span>
+                                </a>
                         <dl class="layui-nav-child">
                             <dd>
                                 <a href="javascript:;" data-url="/team/manger/list.html">
@@ -194,8 +201,10 @@
                             </dd>
                         </dl>
                     </li>
+                    <span class="layui-nav-bar" style="top: 202.5px; height: 0px; opacity: 0;"></span></ul>
             </div>
         </div>
+        <!-- 右侧内容 -->
         <div class="layadmin-pagetabs layui-body layui-form">
             <div class="iconfont layadmin-tabs-control layui-icon-prev icon-double-left J_tabLeft"></div>
             <div class="iconfont layadmin-tabs-control layui-icon-next icon-double-right J_tabRight"></div>
@@ -222,9 +231,6 @@
             </div>
         </div>
         <!-- 底部 -->
-        <div class="layui-footer footer">
-            <p>&copy; 2016 <a href="http://www.igalaxy.com.cn" target="_blank">运动汇</a></p>
-        </div>
     </div>
     <!-- 锁屏 -->
     <div class="admin-header-lock" id="lock-box" style="display: none;">
@@ -238,31 +244,46 @@
     <!-- 移动导航 -->
     <div class="site-tree-mobile layui-hide"><i class="layui-icon">&#xe602;</i></div>
     <div class="site-mobile-shade"></div>
-    <script src="https://cdn.bootcss.com/json2/20160511/json2.min.js"></script>
     <script type="text/javascript" src="layui/layui.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <!-- <script type="text/javascript" src="js/bodyTab.js"></script> -->
     <script>
-        function closeAll(){
-            layer.closeAll();
-        }
-        function open_html(obj){
-            obj['type']=1;
-            layer.open(obj);
-        }
-        function open_iframe(obj,callback){
-            obj['type']=2;            
-            layer.open(obj);
-        }
-        function open_confirm(callback){
-            layer.confirm('确定要删除么',function(index){
-                callback && callback(index);
-                layer.close(index);
-            });
-        }
-        function open_layer(msg){
-            layer.msg(msg); 
-        }
+    layui.use(['jquery', 'form'], function() {
+        var $ = layui.jquery;
+        $('.j_refresh').on('click', function() {
+            $('.layui-tab-content .layui-show iframe')[0].contentWindow.location.reload(true)
+        })
+    })
+
+    function closeLay(index) {
+        layer.close(index);
+    }
+
+    function closeAll(type) {
+        layer.closeAll(type && type);
+    }
+
+    function open_html(obj) {
+        obj['type'] = 1;
+        layer.open(obj);
+    }
+
+    function open_iframe(obj) {
+        obj['type'] = 2;
+        var index = layer.open(obj);
+    }
+
+    function open_confirm(callback) {
+        layer.confirm('确定要删除么？', function(index) {
+            callback && callback(index);
+            layer.close(index);
+        });
+    }
+
+    function open_layer(msg, icon) {
+        icon ?
+            layer.msg(msg, icon) :
+            layer.msg(msg);
+    }
     </script>
 </body>
 

@@ -67,6 +67,14 @@ body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+#pages{
+    padding-top:7px;
+    border: solid 1px #e6e6e6;
+    border-top: none;
+}
+#pages a,#pages span{
+    border:none;
+}
 /*重写layui*/
 .layui-form-item .layui-input-inline{
     width:149px;
@@ -74,4 +82,21 @@ body {
 .layui-table-body{
     overflow-x:hidden;
     overflow-y:scroll;
+}
+.layui-table-view{
+    margin-bottom:0;
+}
+.layui-laypage{
+    margin:0;
+}
+.layui-upload-img[src]{
+    padding-top:10px;
+}
+.layui-form-pane .layui-form-label{
+    padding-left:8px;
+    padding-right:8px;
+}
+.layui-layer-demo .layui-layer-btn a{
+    background: #009688;
+    border-color: #009688;
 }

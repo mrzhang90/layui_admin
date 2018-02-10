@@ -1,279 +1,173 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="layui/css/layui.css" media="all">
-    <link rel="stylesheet" href="css/list.css">
+    <title>Title</title>
+    <link rel="stylesheet" href="/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/css/list.css">
     <style>
-    body {
-        /*overflow-y: scroll;*/
-    }
+        body {
+            /*overflow-y: scroll;*/
+        }
 
-    .layui-body {
-        overflow-y: scroll;
-    }
+        .layui-body {
+            overflow-y: scroll;
+        }
     </style>
 </head>
-
 <body>
-    <div id="formEdit" style="padding:20px;">
-        <form class="layui-form layui-form-pane" action="" lay-filter="">
-            <div class="layui-form-item">
-                <label class="layui-form-label">标题</label>
-                <div class="layui-input-block">
-                    <input type="text" id="title" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
-                </div>
+<div id="formEdit" style="padding:20px;">
+    <form class="layui-form layui-form-pane" action="" lay-filter="">
+        <input type="hidden" name="gdId" id="gdId">
+        <input type="hidden" name="competingTime" id="competingTime">
+        <div class="layui-form-item j_select1">
+            <label class="layui-form-label">选择</label>
+            <div class="layui-input-block" style="white-space:nowrap">
+                <input type="radio" class="type" name="dataType" value="1" title="自动" checked>
+                <input type="radio" class="type" name="dataType" value="2" title="取消">
+                <input type="radio" class="type" name="dataType" value="3" title="手动">
             </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">是否显示</label>
-                <div class="layui-input-block">
-                    <input type="radio" class="state_edit" name="state" value="1" title="是" checked="">
-                    <input type="radio" class="state_edit" name="state" value="0" title="否">
-                </div>
+        </div>
+        <div class="layui-form-item j_selectGroup1" style="display:none;">
+            <label class="layui-form-label">自动项</label>
+            <div class="layui-input-block auto">
             </div>
-            <div class="layui-form-item j_select1">
-                <label class="layui-form-label">选择关联</label>
-                <div class="layui-input-block">
-                    <input type="radio" name="select1" value="" title="无" checked="">
-                    <input type="radio" name="select1" value="" title="关联联赛">
-                    <input type="radio" name="select1" value="" title="关联比赛">
-                </div>
+        </div>
+        <div class="layui-form-item j_selectGroup1" style="display:none;">
+            <label class="layui-form-label">请关联</label>
+            <div class="layui-input-block manual">
             </div>
-            <div class="layui-form-item j_selectGroup1" style="display:none;">
-                <label class="layui-form-label">关联联赛</label>
-                <div class="layui-input-inline j_lx">
-                    <div class="layui-unselect layui-form-select">
-                        <div class="layui-select-title">
-                            <input type="text" placeholder="请选择赛事" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
-                        </div>
-                        <dl class="layui-anim layui-anim-upbit" style="">
-                            <dd lay-value="" class="layui-select-tips">请选择赛事</dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-            <div class="layui-form-item j_selectGroup1" style="display:none;">
-                <label class="layui-form-label">关联比赛</label>
-                <div class="layui-input-inline j_category1">
-                    <div class="layui-unselect layui-form-select">
-                        <div class="layui-select-title">
-                            <input type="text" placeholder="请选择赛事" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
-                        </div>
-                        <dl class="layui-anim layui-anim-upbit" style="">
-                            <dd lay-value="" class="layui-select-tips">请选择赛事</dd>
-                        </dl>
-                    </div>
-                </div>
-                <div class="layui-input-inline j_category2">
-                    <div class="layui-unselect layui-form-select">
-                        <div class="layui-select-title">
-                            <input type="text" placeholder="请选择赛制" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
-                        </div>
-                        <dl class="layui-anim layui-anim-upbit" style="">
-                            <dd lay-value="" class="layui-select-tips">请选择赛制</dd>
-                        </dl>
-                    </div>
-                </div>
-                <div class="layui-input-inline j_category3">
-                    <div class="layui-unselect layui-form-select">
-                        <div class="layui-select-title">
-                            <input type="text" placeholder="请选择分组" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
-                        </div>
-                        <dl class="layui-anim layui-anim-upbit" style="">
-                            <dd lay-value="" class="layui-select-tips">请选择分组</dd>
-                        </dl>
-                    </div>
-                </div>
-                <div class="layui-input-inline j_category4">
-                    <div class="layui-unselect layui-form-select">
-                        <div class="layui-select-title">
-                            <input type="text" placeholder="请选择比赛" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i>
-                        </div>
-                        <dl class="layui-anim layui-anim-upbit" style="">
-                            <dd lay-value="" class="layui-select-tips">请选择比赛</dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <div class="layui-inline">
-                    <label class="layui-form-label">起始时间</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="datetimeStart" id="datetimeStart" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-inline">
-                    <label class="layui-form-label">结束时间</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="datetimeEnd" id="datetimeEnd" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <div class="layui-input-block">
-                    <button class="layui-btn" lay-submit="" lay-filter="btnSubmit">立即提交</button>
-                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                </div>
-            </div>
-        </form>
-    </div>
-    <script type="text/html" id="imgTpl">
-        <img src="{{d.image}}" alt="" style="max-width:100%;max-height:100%;">
-    </script>
-    <!-- 模板文件 end-->
-    <script src="layui/layui.js" charset="utf-8"></script>
-    <script>
-    var dev = 'http://10.0.1.76:3000',
-        prod = '/';
+        </div>
+    </form>
+</div>
+<script type="text/html" id="imgTpl">
+    <img src="{{d.image}}" alt="" style="max-width:100%;max-height:100%;">
+</script>
+<!-- 模板文件 end-->
+<script src="/layui/layui.js" charset="utf-8"></script>
+<script type="text/javascript" src="/js/util.js"></script>
+<script>
+
+    var dev = '',
+        prod = '/',
+        status='${status}',
+        selectedDate='${selectedDate}',
+        initState={1:'auto',3:'manual'};
     var address = dev;
-    layui.extend({
-        select_Category: "/js/select.jquery"
-    }).use(['select_Category', 'laydate', 'form', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'layedit'], function() {
-        var laydate = layui.laydate,
-            form = layui.form,
-            laypage = layui.laypage,
-            layer = layui.layer,
-            table = layui.table,
-            carousel = layui.carousel,
-            upload = layui.upload,
-            $ = layui.jquery,
-            element = layui.element,
-            layedit = layui.layedit,
-            select_Category = layui.select_Category,
-            laydate = layui.laydate;
-        ~(function() {
-            $.get(address + '/selectlx_date/', {}, function(data) {
-                var _arr = [];
-                for (var i = 0, len = data.length; i < len; i++) {
-                    // _arr.push('<option value="'+data[i]['Value']+'">'+data[i]['Display']+'</option>');
-                    var _class = "";
-                    if (i == 0) {
-                        _class = "class='layui-this'";
-                    }
-                    _arr.push(" <dd lay-value='" + data[i].Value + "' " + _class + ">" + data[i].Display + "</dd>");
-                }
-                $(".j_lx").find('dl').append(_arr.join(''));
-            }, "json")
-            var oldStyle;
-            $('.j_lx').on('click', 'dd', function(ev) {
-                ev.stopPropagation();
-
-                oldStyle ? $(oldStyle).removeClass('layui-this') : $(this).siblings('.layui-this').removeClass('layui-this');
-                $(this).addClass('layui-this');
-                $('.j_lx .layui-input').val($(this).text());
-                oldStyle = this;
-                $('.layui-form-select').removeClass('layui-form-selected');
+    function submit(callback){
+        var $=layui.jquery;
+        var data=$('.layui-form').serialize();
+        var gameId=$('#'+initState[$('.type:checked').val()]+'').val();
+        data+='&gameId='+gameId;
+        ajax_submit("/data/submit.json",data,callback)
+        function ajax_submit(url,data,callback){
+            $.ajax({
+                url: url,
+                type: "get",
+                data: data,
+                // dataType: 'json',
+                success: function(result){
+                    zgs_util.updSuccess(result,callback)
+                },
+                error:zgs_util.error
             });
-            $.get(this.DataURL, {}, function(category1) {
-
-
-
-                loadC2C3C4(That, firstcategory1Guid)
-            }, "json")
-
-
-            $('.j_select1').on('click', '.layui-form-radio', function() {
-                if ($(this).is('.layui-disabled')) {
-                    return;
+        }
+    }
+    function getManual(){
+        var $=layui.jquery;
+        var arr=[];
+        $('.manual input[type=checkbox]').each(function(){
+            $(this).is(":checked") && arr.push($(this).val())
+        })
+        if($('#manual').length<=0){
+            $("form").append('<input type="hidden" id="manual" />')
+        }
+        $('#manual').val(arr.join(','))
+    }
+    layui.use(['laydate', 'form', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'layedit'], function() {
+        var form = layui.form,$ = layui.jquery;
+        var list;
+        if(selectedDate){
+            $.get('/data/select_match.json',{'selectedDate':selectedDate},function (result){
+                var data = result.data;
+                list = data.list;
+                if(list.length>0){
+                    var dataType=data.type.value;
+                    renderRadio(dataType,list)
                 }
-                var index = $(this).index('.j_select1 .layui-form-radio');
-                if (index == 0)
-                    $('.j_selectGroup1').hide();
-                else
-                    $('.j_selectGroup1').eq(index - 1).show().siblings('.j_selectGroup1').hide();
-            })
-            //三级联动
-            var _config1 = {
-                Category1ID: "j_category1",
-                Category2ID: "j_category2",
-                Category3ID: "j_category3",
-                Category4ID: "j_category4",
-                DataURL: address + '/select_date/'
+                form.render('checkbox')
+            },'json');
+        }
+        function renderRadio(dataType){
+            $('.type[value='+dataType+']').attr('checked',true)
+            $('#gdId').val(list[0]['gdId'])
+            $('#competingTime').val(list[0]['competingTime'])
+            if(dataType!=2){
+                $('.j_selectGroup1').eq(dataType==1?0:1).show().siblings('.j_selectGroup1').hide();
+                if(dataType==1){
+                    var _attr='checked="" disabled';
+                }
+                var _arr1=[],_val=[];
+                var _arr2=[];
+                for(var i=0,len=list.length;i<len;i++){
+                    var title=getMD(list[i]["competingTime"])+' '+list[i]["leagueMatchName"]+' '+list[i]["eventName"]+' '+list[i]["homeTeamName"]+"VS"+list[i]["guestTeamName"];
+                    if(list[i]['auto']==1){
+                        _val.push(list[i]["id"])
+                        _arr1.push('<div><input type="checkbox" value="'+list[i]["id"]+'" title="'+title+'" '+_attr+'></div>');
+                    }
+                    _arr2.push('<div><input type="checkbox" lay-filter="" value="'+list[i]["id"]+'" title="'+title+'" '+(list[i]['manual']==1 && "checked")+'></div>');
+                }
+                _arr1.push('<input type="hidden" id="auto" value="'+_val.join(',')+'"/>')
+                $('.auto').html(_arr1.join(''));
+                $('.manual').html(_arr2.join(''));
             }
-            select_Category(_config1);
-            //图片上传-编辑表单
-            var uploadInst = upload.render({
-                elem: '#imageEditForm',
-                url: address + '/upload/',
-                before: function(obj) {
-                    //预读本地文件示例，不支持ie8
-                    obj.preview(function(index, file, result) {
-                        $('#msgEditForm').attr('src', result); //图片链接（base64）
-                    });
-                },
-                done: function(res) {
-                    //如果上传失败
-                    if (res.code > 0) {
-                        return layer.msg('上传失败');
+            form.render('radio')
+        }
+        $('.j_select1').on('click', '.layui-form-radio', function() {
+            if ($(this).is('.layui-disabled')) return;
+            var index = $(this).index('.j_select1 .layui-form-radio');
+            if(index==1){
+                $('.j_selectGroup1').hide();
+            }else{
+                $('.j_selectGroup1').eq(index==0?0:1).show().siblings('.j_selectGroup1').hide();
+            }
+        })
+        $('.j_selectGroup1:eq(0)').on('click','.layui-input',function(ev){
+            ev.stopPropagation();
+            $('.layui-form-select').removeClass('layui-form-selected');
+            $(this).parents('.layui-form-select').toggleClass('layui-form-selected')
+        })
+        form.on('checkbox()', function(data){
+            getManual();
+        });
+        //监听提交
+        form.on('submit(btnSubmit)', function(result) {
+            var data=result.field;
+            var _data={};
+            _data["gameId"]=[];
+            for(var k in data){
+                if(data.dataType==1){
+                    if(k.indexOf('auto')!=-1){
+                        _data['gameId'].push(data[k])
                     }
-                    //上传成功
-                },
-                error: function() {
-                    //演示失败状态，并实现重传
-                    var demoText = $('#textEditForm');
-                    demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
-                    demoText.find('.demo-reload').on('click', function() {
-                        uploadInst.upload();
-                    });
-                }
-            });
-
-            //日期
-            laydate.render({
-                elem: '#datetimeStart'
-            });
-            laydate.render({
-                elem: '#datetimeEnd'
-            });
-
-            //创建一个编辑器
-            var editIndex = layedit.build('LAY_demo_editor');
-
-            //自定义验证规则
-            form.verify({
-                title: function(value) {
-                    if (value.length < 5) {
-                        return '标题至少得5个字符啊';
+                }else{
+                    if(k.indexOf('manual')!=-1){
+                        _data['gameId'].push(data[k])
                     }
-                },
-                pass: [/(.+){6,12}$/, '密码必须6到12位'],
-                content: function(value) {
-                    layedit.sync(editIndex);
                 }
-            });
-
-            //监听指定开关
-            form.on('switch(switchTest)', function(data) {
-                layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
-                    offset: '6px'
-                });
-                layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
-            });
-
-            //监听提交
-            form.on('submit(btnSubmit)', function(data) {
-                layer.alert(JSON.stringify(data.field), {
-                    title: '最终的提交信息'
-                })
-                //重载
-                // window.parent.list.match.reload();
-                //也可以不重载，ajax判断修改，js改变
-                window.parent.list.match.update({
-                    title: data.field.title,
-                    start: data.field.datetimeStart,
-                    end: data.field.datetimeEnd
-                })
-                window.parent.closeAll();
-                return false;
-            });
-        })()
+            }
+            _data["gameId"]=_data["gameId"].join(',')
+            _data['gdId']=data.gdId;
+            _data['competingTime']=data.competingTime;
+            _data['dataType']=data.dataType;
+            ajax_submit("/sys/home/submitCompetition.json",_data)
+            return false;
+        });
     });
-    </script>
-</body>
+    function getMD(date){
+        var arr=date.split(' ');
+        var time=arr[1].split(':');
+        return time[0]+'时'+time[1]+'分';
 
+    }
+</script>
+</body>
 </html>

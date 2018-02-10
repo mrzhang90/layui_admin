@@ -1,0 +1,36 @@
+{
+	"status": 1,
+	"code": 1,
+	"msg": "ok",
+	"data": {
+		"ProNews": {
+			"type": {
+				"value": 1,
+				"desc": "微站"
+			},
+			"title": "12",
+			"banner": "http://file.ydh123.com/pro/photo/12daecede7ab44d19ff419dcfaa76fd3",
+			"handler": null,
+			"url": "http://mp.weixin.qq.com/s/YJ2LMQuSOu6cxVnmxdAYfA",
+			"detailType": {
+				"value": 0,
+				"desc": "H5"
+			},
+			"status": {
+				"value": 1,
+				"desc": "上架"
+			},
+			"releaseTime": "2018-02-07 00:00:00",
+			"endTime": "2018-02-08 15:45:45",
+			"top": {
+				"value": 0,
+				"desc": "不置顶"
+			},
+			"gameId": null,
+			"activityId": null,
+			"eventId": null,
+			"groupId": null,
+			"id": "88998899"
+		}
+	}
+}

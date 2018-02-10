@@ -1,0 +1,29 @@
+{
+	"status": 1,
+	"code": 1,
+	"msg": "ok",
+	"data": {
+		"sysHomeBanner": {
+			"name": "wq",
+			"banner": "http://file.ydh123.com/sys/banner/1aa210a2cd354a5389a9fb877eaaa868",
+			"type": {
+				"value": 6,
+				"desc": "新闻"
+			},
+			"handler": "3132fkd2",
+			"sort": "1",
+			"display": {
+				"value": 1,
+				"desc": "是"
+			},
+			"releaseTime": "2018-02-06 05:00:00",
+			"endTime": "2018-02-27 00:00:00",
+			"url": null,
+			"activityId": null,
+			"eventId": null,
+			"groupId": null,
+			"gameId": null,
+			"id": "dk23DKD2"
+		}
+	}
+}
